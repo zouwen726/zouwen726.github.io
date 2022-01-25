@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+  
+    
+    <entry>
+      <title>hexo seo优化</title>
+      <link href="/posts/63295.html"/>
+      <url>/posts/63295.html</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="SEO优化"><a href="#SEO优化" class="headerlink" title="SEO优化"></a>SEO优化</h2><blockquote><p>搜索引擎优化，又称为 SEO，即 Search Engine Optimization，它是一种通过分析搜索引擎的排名规律，了解各种搜索引擎怎样进行搜索、怎样抓取互联网页面、怎样确定特定关键词的搜索结果排名的技术。Google 自动收录效果还不错，百度就差得远了（GitHub不允许百度的Spider爬取GitHub上的内容）。</p></blockquote><h3 id="安装-sitemap-插件"><a href="#安装-sitemap-插件" class="headerlink" title="安装 sitemap 插件"></a>安装 sitemap 插件</h3><pre class=" language-lang-bash"><code class="language-lang-bash">npm install hexo-generator-sitemap --savenpm install hexo-generator-baidu-sitemap --save  #百度专用</code></pre><h3 id="百度优化"><a href="#百度优化" class="headerlink" title="百度优化"></a>百度优化</h3><p>登录百度搜索资源平台 <a href="https://ziyuan.baidu.com/，">https://ziyuan.baidu.com/，</a> 登录成功之后在 用户中心 —&gt; 站点管理 页面中点击添加网站， </p><p><img src="https://raw.githubusercontent.com/zouwen726/img/main/img202201121716024.png" alt>     </p><blockquote><p>提示：由于百度的 spider 是爬取不到 GitHub 的内容的，所以在第三步验证网站的时候，建议选择CNAME验证的方式。   </p></blockquote><p><img src="https://raw.githubusercontent.com/zouwen726/img/main/img202201121718478.png" alt><br>在自己购买域名的运营商那里添加CNAME验证<br><img src="https://raw.githubusercontent.com/zouwen726/img/main/img202201121718482.png" alt><br>主机记录填前面半部分，记录值填后面那部分<br><img src="https://raw.githubusercontent.com/zouwen726/img/main/img202201121718481.png" alt></p><p>在人工自动提交的sitemap那里填写自己sitemap文件的URL地址即可</p><p><img src="https://raw.githubusercontent.com/zouwen726/img/main/img202201121718479.png" alt><br>提交成功后等一会会有记录显示<br><img src="https://raw.githubusercontent.com/zouwen726/img/main/img202201121718480.png" alt></p><h4 id="自动提交"><a href="#自动提交" class="headerlink" title="自动提交"></a>自动提交</h4><p>主题配置文件中配置：</p><pre class=" language-lang-yaml"><code class="language-lang-yaml"># 百度搜索资源平台提交链接baiduPush: true</code></pre><p>主动推送方式<br>安装主动推送插件：hexo-baidu-url-submit</p><pre class=" language-lang-bash"><code class="language-lang-bash">hexo-baidu-url-submit</code></pre><p>然后打开hexo配置文件，在末尾加入以下配置：</p><pre class=" language-lang-yaml"><code class="language-lang-yaml">baidu_url_submit:  count: 80 # 提交最新的一个链接  host: blog.sky03.cn # 在百度站长平台中注册的域名  token: xxxxxxx # 请注意这是您的秘钥， 所以请不要把博客源代码发布在公众仓库里!  path: baidu_urls.txt # 文本文档的地址， 新链接会保存在此文本文档里</code></pre><p>密钥token写下面这个<br><img src="https://raw.githubusercontent.com/zouwen726/img/main/img202201121739499.png" alt><br>再加入新的deploy：</p><pre class=" language-lang-yaml"><code class="language-lang-yaml">deploy:  type: 'git'  repository: git@github.com:zouwen726/zouwen726.github.io.git  branch: main  type: baidu_url_submitter</code></pre><p>这样每次执行 hexo d 的时候，新的链接就会被推送了。</p><h3 id="谷歌优化"><a href="#谷歌优化" class="headerlink" title="谷歌优化"></a>谷歌优化</h3><p>登录 Google Search Console <a href="https://search.google.com/search-console/welcome?hl=zh-CN，">https://search.google.com/search-console/welcome?hl=zh-CN，</a> 点击添加资源，输入自己的域名，按提示操作。   </p><p><img src="https://raw.githubusercontent.com/zouwen726/img/main/img202201121753733.png" alt><br>在域名供应商那里添加记录<br><img src="https://raw.githubusercontent.com/zouwen726/img/main/img202201121754895.png" alt><br>按下面图片上操作<br><img src="https://raw.githubusercontent.com/zouwen726/img/main/img202201121754455.png" alt><br>最后登录谷歌添加自己站点就ok</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> hexo </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> hexo </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>hexo 美化</title>
+      <link href="/posts/55875.html"/>
+      <url>/posts/55875.html</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h3 id="新建分类-categories-页"><a href="#新建分类-categories-页" class="headerlink" title="新建分类 categories 页"></a>新建分类 categories 页</h3><p> <code>categories</code> 页是用来展示所有分类的页面，如果 <code>source</code> 目录下还没有 <code>categories/index.md</code> 文件，那么就需要新建一个，命令如下：      </p><pre class=" language-lang-bash"><code class="language-lang-bash"> hexo new page "categories"</code></pre><p> 编辑你刚刚新建的页面文件 /source/<code>categories/index.md</code>，至少需要以下内容：   </p><pre class=" language-lang-yaml"><code class="language-lang-yaml">---title: categoriesdate: 2018-09-30 17:25:30type: "categories"layout: "categories"---</code></pre><h3 id="新建标签-tags-页"><a href="#新建标签-tags-页" class="headerlink" title="新建标签 tags 页"></a>新建标签 tags 页</h3><p> <code>tags</code> 页是用来展示所有标签的页面，如果 source 目录下还没有 <code>tags/index.md</code> 文件，那么就需要新建一个，命令如下：   </p><pre class=" language-lang-bash"><code class="language-lang-bash"> hexo new page "tags"</code></pre><p>编辑刚刚新建的页面文件 <code>/source/tags/index.md</code>，至少需要以下内容：   </p><pre class=" language-lang-yaml"><code class="language-lang-yaml">---title: tagsdate: 2018-09-30 18:23:38type: "tags"layout: "tags"---</code></pre><h3 id="新建关于我-about-页"><a href="#新建关于我-about-页" class="headerlink" title="新建关于我 about 页"></a>新建关于我 about 页</h3><p> about 页是用来展示关于我和我的博客信息的页面，如果 source 目录下还没有 about/index.md 文件，那么就需要新建一个，命令如下：  </p><pre class=" language-lang-bash"><code class="language-lang-bash">new page "about"</code></pre><p>编辑刚刚新建的页面文件 <code>/source/about/index.md</code>，至少需要以下内容：</p><pre class=" language-lang-yaml"><code class="language-lang-yaml">---title: aboutdate: 2018-09-30 17:25:30type: "about"layout: "about"---</code></pre><h3 id="新建友情连接-friends-页（可选的）"><a href="#新建友情连接-friends-页（可选的）" class="headerlink" title="新建友情连接 friends 页（可选的）"></a>新建友情连接 friends 页（可选的）</h3><p>friends 页是用来展示友情连接信息的页面，如果 source 目录下还没有 friends/index.md 文件，那么就需要新建一个，命令如下：</p><pre class=" language-lang-bash"><code class="language-lang-bash">hexo new page "friends"</code></pre><p>编辑刚刚新建的页面文件<code>/source/friends/index.md</code>，至少需要以下内容：   </p><pre class=" language-lang-yaml"><code class="language-lang-yaml">---title: friendsdate: 2018-12-12 21:25:30type: "friends"layout: "friends"---</code></pre><p>同时，在 source 目录下新建 _data 目录，在 _data 目录中新建 friends.json 文件，文件内容如下所示：  </p><pre class=" language-lang-json"><code class="language-lang-json">[  &#123;    "avatar": "https://www.lixl.cn/medias/avatar.jpg",    "name": "wfsfds",    "introduction": "人生就是一场修行，上善若水，厚德载物。",    "url": "https://www.lixl.cn/",    "title": "前去参观"  &#125;,  &#123;    "avatar": "https://wiki.hyperledger.org/download/attachments/2392069/fabric?version=1&modificationDate=1540928132000&api=v2",    "name": "Fabric",    "introduction": "A Blockchain Platform for the Enterprise",    "url": "https://hyperledger-fabric.readthedocs.io/en/master/",    "title": "前去学习"  &#125;,  &#123;    "avatar": "https://www.bootcdn.cn/assets/img/maoyun.svg",    "name": "BootCDN",    "introduction": "稳定、快速、免费的前端开源项目 CDN 加速服务。",    "url": "https://www.bootcdn.cn/",    "title": "前去加速"  &#125;]</code></pre><h3 id="代码高亮"><a href="#代码高亮" class="headerlink" title="代码高亮"></a>代码高亮</h3><p>由于 Hexo 自带的代码高亮主题显示不好看，所以主题中使用到了 hexo-prism-plugin 的 Hexo 插件来做代码高亮，安装命令如下：</p><pre class=" language-lang-bash"><code class="language-lang-bash">npm i -S hexo-prism-plugin</code></pre><p>然后，修改 Hexo 根目录下 _config.yml 文件中 highlight.enable 的值为 false，并新增 prism 插件相关的配置，主要配置如下：</p><pre class=" language-lang-yaml"><code class="language-lang-yaml">highlight:  enable: falseprism_plugin:  mode: "preprocess" # realtime/preprocess  theme: "tomorrow"  line_number: false # default false  custom_css:</code></pre><h3 id="搜索"><a href="#搜索" class="headerlink" title="搜索"></a>搜索</h3><p>本主题中还使用到了 <code>hexo-generator-search</code> 的 Hexo 插件来做内容搜索，安装命令如下：</p><pre class=" language-lang-bash"><code class="language-lang-bash">npm install hexo-generator-search --save</code></pre><p>在 Hexo 根目录下的 _config.yml 文件中，新增以下的配置项：</p><pre class=" language-lang-yaml"><code class="language-lang-yaml">search:  path: search.xml  field: post</code></pre><h3 id="修改页脚"><a href="#修改页脚" class="headerlink" title="修改页脚"></a>修改页脚</h3><p>页脚信息可能需要做定制化修改，而且它不便于做成配置信息，所以可能需要你自己去再修改和加工。修改的地方在主题文件的 /layout/_partial/footer.ejs 文件中，包括站点、使用的主题、访问量等。</p><p>修改社交链接<br>在主题的 _config.yml 文件中，默认支持 QQ、GitHub 和邮箱的配置，可以在主题文件的 /layout/_partial/social-link.ejs 文件中，新增、修改需要的社交链接地址，增加链接可参考如下代码：</p><pre class=" language-lang-html"><code class="language-lang-html"><a  href="https://github.com/blinkfox"  class="tooltipped"  target="_blank"  data-tooltip="访问我的GitHub"  data-position="top"  data-delay="50">  <i class="fa fa-github"></i></a></code></pre><p>其中，社交图标（如：fa-github）可以在 Font Awesome 中搜索找到。以下是常用社交图标的标识，供参考：</p><pre class=" language-lang-yaml"><code class="language-lang-yaml">Facebook: fa-facebookTwitter: fa-twitterGoogle-plus: fa-google-plusLinkedin: fa-linkedinTumblr: fa-tumblrMedium: fa-mediumSlack: fa-slack新浪微博: fa-weibo微信: fa-wechatQQ: fa-qq</code></pre><h3 id="修改打赏的二维码图片"><a href="#修改打赏的二维码图片" class="headerlink" title="修改打赏的二维码图片"></a>修改打赏的二维码图片</h3><p>在主题文件的 source/medias/reward 文件中，可以替换成你的的微信和支付宝的打赏二维码图片。</p><h3 id="一键部署"><a href="#一键部署" class="headerlink" title="一键部署"></a>一键部署</h3><p>通过 <code>hexo-deployer-git</code> 插件可以实现一键将博客同时部署到多个 git 仓库中。如同时发布到 github 及 gitee 提供的 pages 服务。安装：</p><pre class=" language-lang-bash"><code class="language-lang-bash">npm install hexo-deployer-git --save</code></pre><p>修改 Hexo 根目录下的 _config.yml 文件中的如下内容:</p><pre class=" language-lang-yaml"><code class="language-lang-yaml">## Docs: https://hexo.io/docs/deployment.htmldeploy:  - type: git    repo: https://github.com/lxl80/blog.git    branch: gh-pages    ignore_hidden: false  - type: git    repo: https://gitee.com/lxl80/lxl80.git    branch: master    ignore_hidden: false</code></pre><p>也可以如本站一样，采用 hexo-deployer-cos-enhanced 插件将静态内容部署到腾讯云对象存储服务中，在 DNS 配置中将境内线路解析到腾讯云 CDN 地址，实现加速。部署完成后会自动刷新被更新文件的 CDN 缓存。<br>安装：</p><pre class=" language-lang-bash"><code class="language-lang-bash">npm install hexo-deployer-cos-enhanced --save</code></pre><p>_config.yml 配置如下:</p><pre class=" language-lang-yaml"><code class="language-lang-yaml">deploy:  - type: git    repo: https://github.com/lxl80/blog.git    branch: gh-pages    ignore_hidden: false  - type: cos    bucket: lxl80-130****    region: ap-beijing    secretId: AKIDh9****F8FvL    secretKey: Z3IGiur****QZR3PgjXmlVg    cdnConfig:      enable: true      cdnUrl: https://static.lixl.cn      bucket: static-130****      region: ap-beijing      folder: static      secretId: AKIDh9****F8FvL      secretKey: Z3IGiur****QZR3PgjXmlVg</code></pre><p>然后通过 hexo g -d 即可实现一键发布，并更新 CDN 缓存。</p><h3 id="文章链接转静态短地址（建议安装）"><a href="#文章链接转静态短地址（建议安装）" class="headerlink" title="文章链接转静态短地址（建议安装）"></a>文章链接转静态短地址（建议安装）</h3><p>如果文章名称是中文的，那么 Hexo 默认生成的永久链接也会有中文，这样不利于 SEO，且 gitment 评论对中文链接也不支持。我们可以用 hexo-permalink-pinyin Hexo 插件生成文章时生成中文拼音的永久链接，或者用hexo-abbrlink 生成静态文章链接。以下结合 hexo-abbrlink 生成类似 /yyyy/mmdd+随机数.html 的文章链接地址。</p><p>安装命令如下：</p><pre class=" language-lang-bash"><code class="language-lang-bash">npm install hexo-abbrlink --save</code></pre><p>在 Hexo 根目录下的 _config.yml 文件中，修改 permalink: ，并在文件末尾新增 abbrlink:配置项：</p><pre class=" language-lang-yaml"><code class="language-lang-yaml">permalink: :year/:month:day:abbrlink.htmlabbrlink:  alg: crc16 #算法选项：crc16丨crc32  rep: dec #输出进制：dec为十进制，hex为十六进制</code></pre><h3 id="CND-加速（建议启用）"><a href="#CND-加速（建议启用）" class="headerlink" title="CND 加速（建议启用）"></a>CND 加速（建议启用）</h3><p>放在 Github 的资源在国内加载速度比较慢，因此需要使用 CDN 加速来优化网站打开速度，jsDelivr + Github 便是免费且好用的 CDN，非常适合博客网站使用。也可以选择主流云服务商提供的对象存储+CDN 来获得更快速及稳定的访问效果，费用低到几乎可忽略。</p><p>用法：</p><blockquote><p><a href="https://cdn.jsdelivr.net/gh/你的用户名/你的仓库名@发布的版本号/文件路径">https://cdn.jsdelivr.net/gh/你的用户名/你的仓库名@发布的版本号/文件路径</a>   </p></blockquote><p>例如：</p><blockquote><p><a href="https://cdn.jsdelivr.net/gh/lxl80/blog@gh-pages/medias/banner/1.jpg">https://cdn.jsdelivr.net/gh/lxl80/blog@gh-pages/medias/banner/1.jpg</a>    </p></blockquote><p>注意：版本号不是必需的，是为了区分新旧资源，如果不使用版本号，将会直接引用最新资源。</p><p>还可以配合 PicGo图床上传工具的自定义域名前缀来上传图片，使用极其方便。具体使用方法可参见我的另一篇文章: 使用 Typora+iPic/PicGo 图床+CDN 实现高效 Markdown 创作</p><h3 id="文章字数统计插件（可选的）"><a href="#文章字数统计插件（可选的）" class="headerlink" title="文章字数统计插件（可选的）"></a>文章字数统计插件（可选的）</h3><p>如果你想要在文章中显示文章字数、阅读时长信息，可以安装 hexo-wordcount插件。</p><p>安装命令如下：</p><pre class=" language-lang-bash"><code class="language-lang-bash">npm i --save hexo-wordcount</code></pre><p>然后只需在本主题下的 _config.yml 文件中，激活以下配置项即可：</p><pre class=" language-lang-yaml"><code class="language-lang-yaml">wordCount:  enable: false # 将这个值设置为 true 即可.  postWordCount: true  min2read: true  totalCount: true</code></pre><h3 id="添加-RSS-订阅支持（可选的）"><a href="#添加-RSS-订阅支持（可选的）" class="headerlink" title="添加 RSS 订阅支持（可选的）"></a>添加 RSS 订阅支持（可选的）</h3><p>本主题中还使用到了 hexo-generator-feed 的 Hexo 插件来做 RSS，安装命令如下：</p><pre class=" language-lang-html"><code class="language-lang-html">npm install hexo-generator-feed --save</code></pre><p>在 Hexo 根目录下的 _config.yml 文件中，新增以下的配置项：</p><pre class=" language-lang-yaml"><code class="language-lang-yaml">feed:  type: atom  path: atom.xml  limit: 20  hub:  content:  content_limit: 140  content_limit_delim: " "  order_by: -date</code></pre><p>执行 hexo clean &amp;&amp; hexo g 重新生成博客文件，然后在 public 文件夹中即可看到 atom.xml 文件，说明已经安装成功了。</p><h3 id="自定制修改"><a href="#自定制修改" class="headerlink" title="自定制修改"></a>自定制修改</h3><p>在本主题的 _config.yml 中可以修改部分自定义信息，有以下几个部分：</p><ul><li>菜单</li><li>我的梦想</li><li>首页的音乐播放器和视频播放器配置</li><li>是否显示推荐文章名称和按钮配置</li><li>favicon 和 Logo</li><li>个人信息</li><li>TOC 目录</li><li>文章打赏信息</li><li>复制文章内容时追加版权信息</li><li>MathJax</li><li>文章字数统计、阅读时长</li><li>点击页面的’爱心’效果</li><li>我的项目</li><li>我的技能</li><li>我的相册   </li></ul><p>Gitalk、Gitment、Valine 和 disqus 评论配置<br>不蒜子统计和谷歌分析（Google Analytics）<br>默认特色图的集合。当文章没有设置特色图时，本主题会根据文章标题的 hashcode 值取余，来选择展示对应的特色图   </p><p>如果本主题中的诸多功能和主题色彩你不满意，可以在主题中自定义修改，很多更自由的功能和细节点的修改难以在主题的 _config.yml 中完成，需要修改源代码才来完成。以下列出了可能有用的地方：</p><p>修改主题颜色<br>在主题文件的 /source/css/matery.css 文件中，搜索 .bg-color 来修改背景颜色：</p><pre class=" language-lang-css"><code class="language-lang-css">/* 整体背景颜色，包括导航、移动端的导航、页尾、标签页等的背景颜色. */.bg-color &#123;  background-image: linear-gradient(to right, #4cbf30 0%, #0f9d58 100%);&#125;@-webkit-keyframes rainbow &#123;  /* 动态切换背景颜色. */&#125;@keyframes rainbow &#123;  /* 动态切换背景颜色. */&#125;</code></pre><h3 id="修改-banner-图和文章特色图"><a href="#修改-banner-图和文章特色图" class="headerlink" title="修改 banner 图和文章特色图"></a>修改 banner 图和文章特色图</h3><p>可以直接在 /source/medias/banner 文件夹中更换喜欢的 banner 图片，主题代码中是每天动态切换一张，只需 7 张即可。如果会 JavaScript 代码，可以修改成自己喜欢切换逻辑，如：随机切换等，banner 切换的代码位置在 /layout/_partial/bg-cover-content.ejs 文件的 <script></script> 代码中：</p><pre class=" language-lang-javascript"><code class="language-lang-javascript">$(".bg-cover").css("background-image", "url(/medias/banner/" + new Date().getDay() + ".jpg)");</code></pre><p>在 /source/medias/featureimages 文件夹中默认有 24 张特色图片，你可以再增加或者减少，并需要在 _config.yml 做同步修改。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> hexo </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> hexo </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Hexo 安装</title>
+      <link href="/posts/29157.html"/>
+      <url>/posts/29157.html</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="安装Node-js"><a href="#安装Node-js" class="headerlink" title="安装Node.js"></a>安装Node.js</h2><h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p>Node.js官方地址  <a href="https://nodejs.org/en/">https://nodejs.org/en/</a> </p><h3 id="验证"><a href="#验证" class="headerlink" title="验证"></a>验证</h3><p>安装完成后，要查看我们是否安装成功，可以打开命令提示符<code>（Win + R）</code>   </p><p>输入 cmd 打开控制台，输入如下命令，如果出现对应版本号，说明安装成功了；</p><blockquote><p>node -v<br>npm -v       </p></blockquote><p><img src="https://raw.githubusercontent.com/zouwen726/img/main/img202201121325261.png" alt></p><h2 id="安装Git"><a href="#安装Git" class="headerlink" title="安装Git"></a>安装Git</h2><h2 id="安装-1"><a href="#安装-1" class="headerlink" title="安装"></a>安装</h2><p>官方网址 <a href="https://git-scm.com/download/">https://git-scm.com/download/</a>  </p><h3 id="验证-1"><a href="#验证-1" class="headerlink" title="验证"></a>验证</h3><p>安装完成后在命令提示符中输入git —version验证是否安装成功。   </p><blockquote><p>  git —version     </p></blockquote><p><img src="https://raw.githubusercontent.com/zouwen726/img/main/img202201121337213.png" alt>      </p><h2 id="注册Github账号"><a href="#注册Github账号" class="headerlink" title="注册Github账号"></a>注册Github账号</h2><h3 id="注册"><a href="#注册" class="headerlink" title="注册"></a>注册</h3><p>官网地址 <a href="https://github.com/">https://github.com/</a>    </p><h3 id="创建个人仓库"><a href="#创建个人仓库" class="headerlink" title="创建个人仓库"></a>创建个人仓库</h3><ul><li>点击GitHub中的<code>New repository</code>创建新仓库</li><li>仓库名：zouwen726.github.io(必须  <code>用户名.github.io</code>)<code>看黑板这是重点</code>     </li></ul><p>  <img src="https://raw.githubusercontent.com/zouwen726/img/main/img202201121350487.png" alt></p><h3 id="git-与-GitHub-账号绑定"><a href="#git-与-GitHub-账号绑定" class="headerlink" title="git 与 GitHub 账号绑定"></a>git 与 GitHub 账号绑定</h3><ul><li>右键打开 Git Bash，然后输入下面命令：   </li></ul><blockquote><p>git config —global user.name “zouwen726”<br>git config —global user.email “2535685121@qq.com”    </p></blockquote><p>上面<code>user.name</code>和<code>user.mail</code>替换自己的即可    </p><h3 id="配置密钥"><a href="#配置密钥" class="headerlink" title="配置密钥"></a>配置密钥</h3><p>作用：用于连接GitHub上传博客   </p><p>首先在本地生成 ssh 密钥文件，输入如下命令后直接三次回车即可</p><pre class=" language-lang-bash"><code class="language-lang-bash">    ssh-keygen -t rsa -C "2535685121@qq.com"</code></pre><ul><li><p>一般执行上述命令之后，会生成 <code>id_rsa</code> 和 <code>id_rsa.pub</code>两个文件，前者是我们私有的，而后者则是对外开放的   </p></li><li><p>接着找到生成的<code>.ssh</code> 的文件夹中的 id_rsa.pub 密钥，将内容复制；   </p></li><li><p>有的人可能pub文件夹打不开可以用以下方法:   </p><p>1.在c盘找到.ssh文件，然后进去输入cmd   </p><p><img src="https://raw.githubusercontent.com/zouwen726/img/main/img202201121407210.png" alt><br>2.在里面输入<code>type id_rsa.pub</code> 然后就能看到密钥，复制密钥   </p></li></ul><pre class=" language-lang-html"><code class="language-lang-html">type id_rsa.pub</code></pre><p> <img src="https://raw.githubusercontent.com/zouwen726/img/main/img202201121408917.png" alt></p><ul><li>打开你的github主页，进入个人设置 -&gt; SSH and GPG keys -&gt; New SSH key:    </li></ul><ul><li>将刚复制的内容粘贴到key那里，title随便填，保存        </li></ul><p><img src="https://raw.githubusercontent.com/zouwen726/img/main/img202201121412690.png" alt>    </p><ul><li>输入ssh -T git@github.com，如果如下图所示，出现你的用户名，那就成功了。     </li></ul><pre class=" language-lang-bash"><code class="language-lang-bash"> ssh -T git@github.com</code></pre><blockquote><p>如果提示Are you sure you want to continue connecting (yes/no)?，输入yes，<br>看到这个信息说明SSH已配置成功！   </p></blockquote><p><img src="https://raw.githubusercontent.com/zouwen726/img/main/img202201121418530.png" alt></p><h2 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h2><ul><li>在合适的地方新建一个文件夹，用来存放自己的博客文件，比如我的博客文件都存放在C:\blog目录下</li></ul><ul><li>定位到该目录下，输入npm i hexo-cli -g安装      </li></ul><pre class=" language-lang-bash"><code class="language-lang-bash">npm i hexo-cli -g</code></pre><ul><li>Hexo安装完后输入hexo -v验证是否安装成功     </li></ul><pre class=" language-lang-html"><code class="language-lang-html">hexo -v</code></pre><h3 id="初始化博客"><a href="#初始化博客" class="headerlink" title="初始化博客"></a>初始化博客</h3><p>初始化博客</p><pre class=" language-lang-html"><code class="language-lang-html">hexo init</code></pre><p>然后生成静态博客文件  </p><pre class=" language-lang-htnl"><code class="language-lang-htnl">hexo g</code></pre><p>本地预览博客</p><pre class=" language-lang-html"><code class="language-lang-html">hexo s</code></pre><p>在浏览器中输入 <a href="http://localhost:4000">http://localhost:4000</a>   </p><p>如果出现以下画面就说明成功了！   </p><h3 id="修改博客配置"><a href="#修改博客配置" class="headerlink" title="修改博客配置"></a>修改博客配置</h3><ul><li><p>本地博客测试成功后，就是上传到 GitHub 进行部署，使其能够在网络上访问   </p></li><li><p>安装 hexo-deployer-git      </p></li></ul><pre class=" language-lang-bash"><code class="language-lang-bash">hexo-deployer-git</code></pre><ul><li><p>打开博客根目录下的_config.yml文件，这是博客的配置文件，在这里你可以修改与博客相关的各种信息。   </p></li><li><p>修改最后一行的配置：  </p></li></ul><pre class=" language-lang-html"><code class="language-lang-html">  deploy:  type: git  repository: https://zouwen726.github.io  branch: main</code></pre><h2 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h2><p>推送到github   </p><pre class=" language-lang-bash"><code class="language-lang-bash">hexo d</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> hexo </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> hexo </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>什么是懒加载什么是预加载</title>
+      <link href="/posts/45428.html"/>
+      <url>/posts/45428.html</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="什么是懒加载"><a href="#什么是懒加载" class="headerlink" title="什么是懒加载"></a>什么是懒加载</h2><h3 id="懒加载"><a href="#懒加载" class="headerlink" title="懒加载"></a>懒加载</h3><blockquote><p>延迟加载图片，达到加载条件时再加载。比如电商网站，鼠标没滑到下面内容，下面内容图片就不会加载出来。滑动到哪个位置，哪个位置图片再加载。   </p><p>原理：img的src属性初始不放置实际需要的链接，而是存在data-url属性中，达到某条件后再动态充值src属性值为data-url里的链接地址，实现懒加载。<br>作用：减轻服务器压力，节约流量，页面加载速度快。   </p><h3 id="预加载"><a href="#预加载" class="headerlink" title="预加载"></a>预加载</h3><p>提前加载图片，当用户需要查看时是直接从浏览器缓存里取的资源，用户操作体验速度快。<br>原理：在浏览器加载页面时创建image对象并赋值src链接<br>作用：让用户有快速的冲浪体验。   </p><p>缺点：增加服务器压力，首页加载渲染时间长。   </p><p>区别： <code>懒加载</code>与<code>预加载</code>都有提高用于体验效果，但是优化体验效果的出发点不同，懒加载可以减轻服务器压力，但是预加载会增加服务器压力；</p></blockquote><h2 id="实现方式"><a href="#实现方式" class="headerlink" title="实现方式"></a>实现方式</h2><h3 id="懒加载实现"><a href="#懒加载实现" class="headerlink" title="懒加载实现"></a>懒加载实现</h3><pre class=" language-lang-html"><code class="language-lang-html">![](http://zouwen.site/img202201111430588.jpg)</code></pre><h3 id="预加载实现"><a href="#预加载实现" class="headerlink" title="预加载实现"></a>预加载实现</h3><pre class=" language-lang-html"><code class="language-lang-html"></code></pre><p><img src="https://raw.githubusercontent.com/zouwen726/img/main/img202201111457274.png" alt></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 加载 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>什么是CDN</title>
+      <link href="/posts/875.html"/>
+      <url>/posts/875.html</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="什么是CDN"><a href="#什么是CDN" class="headerlink" title="什么是CDN"></a>什么是CDN</h2><h3 id="什么是CDN-1"><a href="#什么是CDN-1" class="headerlink" title="什么是CDN"></a>什么是CDN</h3><p>CDN的全称是Content Delivery Network，即内容分发网络；使用户可就近取得所需内容，解决Internet网络拥挤的状况，提高用户访问网站的响应速度。</p><h2 id="简单阐述"><a href="#简单阐述" class="headerlink" title="简单阐述"></a>简单阐述</h2><p>CDN这个技术其实说起来并不复杂，最初的核心理念就是将内容缓存在用户最近的地方。如果用户请求的服务器离自己很远，那么我们就在靠近用户的地方，建一个缓存服务器，把远端的内容复制一份，用户发起请求，会把离你最近的那份给你，这样大大提高了效率，减少了相应时间。因为这项技术是把内容进行了分发，所以，它的名字就叫做CDN—Content Delivery Network，内容分发网络。具体来说，CDN就是采用更多的缓存服务器（CDN边缘节点），布放在用户访问相对集中的地区或网络中。当用户访问网站时，利用全局负载技术，将用户的访问指向距离最近的缓存服务器上，由缓存服务器响应用户请求。（有点像电商的本地仓吧？）</p><h2 id="域名解析"><a href="#域名解析" class="headerlink" title="域名解析"></a>域名解析</h2><p>域名解析记录类型主要分为<code>A记录</code>、<code>MX记录</code>、<code>CNAME记录</code>、<code>NS记录</code>和<code>TXT记录</code>，其中A记录和<code>CNAME</code>记录是我们建站最常用到的。</p><blockquote><p>A记录，A代表的是Address，用来指定域名对应的IP地址,如将baidu.com指定到IP地址139.114.184.333。A记录可以将多个域名解析到一个IP地址，但是不能将一个域名解析到多个IP地址。   </p><p>CNAME记录，全称是Canonical Name（别名解析）。所谓的别名解析就是可以为一个域名设置一个或者多个别名。   </p></blockquote><p>其实解析思路不难，我们在域名服务商购买了一个域名之后，我们可以直接把域名指向一个IP地址，同时我们也可以给某个域名取一个别名，比如<code>“baidu.com”</code>取一个别名<code>“baidu2.com”</code>，然后CNAME记录会把小名<code>“baidu2.com”</code>指向<code>“baidu.com”</code>,然后通过A记录，<code>“baidu.com”</code>指向对应IP。这里的别名专业一点叫做CNAME，相信大家对这个词有点眼熟，它就是这个意思。<br>而域名解析，实际上就是解析出指定域名所对应的IP地址，或者该域名的一个CNAME。</p><h2 id="DNS负责域名解析"><a href="#DNS负责域名解析" class="headerlink" title="DNS负责域名解析"></a>DNS负责域名解析</h2><p>域名解析是<code>由DNS系统</code>来负责的，DNS服务接受外部请求，从请求里提取域名，</p><ul><li>如果这个域名对应的是IP地址，则返回这个IP地址，</li><li>如果这个域名对应的是CNAME，则继续查找CNAME域名的IP地址，然后将该地址返回给请求发送者。请求发送者拿到IP地址之后，完成真正的请求调用。<h2 id="什么是CDN专用DNS服务器"><a href="#什么是CDN专用DNS服务器" class="headerlink" title="什么是CDN专用DNS服务器"></a>什么是CDN专用DNS服务器</h2>用户在访问静态资源时一般通过域名来访问，域名会被解析成某一个IP地址，关键的问题就是，DNS系统怎么在做域名解析时，解析出来一个离用户最近的一个IP地址呢。</li></ul><blockquote><p>普通的DNS系统是做不到的，需要一个特殊的DNS服务器，这个特殊DNS要以下要求</p></blockquote><ol><li>拿到用户的位置</li><li>用户访问内容对应的IP地址   </li></ol><blockquote><p>第一个可以直接从用户请求那里拿到   </p><p>第二个由谁来解决，我们现在考虑的是CDN      </p></blockquote><p>CDN提供商肯定知道他们公司在哪些地方部署了机器以及它们的IP地址，所以这个问题只能有CDN提供商来解决，CDN提供商会提供这个特殊的DNS服务器，我们叫做 CDN专用DNS服务器。普通DNS服务器通过域名解析到了它的别名，发现别名指向的是个DNS服务器，于是它就不会再执行下去，把任务交给另一个DNS（CDN专用DNS服务器）去执行，然后依据服务器上记录的所有CDN服务器地址信息，选出一个离用户最近的一个CDN服务器地址，并返回给用户，用户即可访问离自己最近的一台CDN服务器了。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> CDN </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> CDN </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>markdown</title>
+      <link href="/posts/23825.html"/>
+      <url>/posts/23825.html</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h3 id="Markdown简介"><a href="#Markdown简介" class="headerlink" title="Markdown简介"></a>Markdown简介</h3><p>Markdown 是一种轻量级标记语言，它允许人们使用易读易写的纯文本格式编写文档。 由约翰·格鲁2004伯创建，Markdown 编写的文档可以导出 HTML 、Word、图像、PDF、Epub 等多种格式的文档，Markdown 编写的文档后缀为 .md, 或者.markdown。Markdown 能被使用来撰写电子书，如：Gitbook，当前许多网站都广泛使用 Markdown 来撰写帮助文档或是用于论坛上发表消息。例如：GitHub、简书、reddit 等等。   </p><h3 id="Markdown基本书写规范"><a href="#Markdown基本书写规范" class="headerlink" title="Markdown基本书写规范"></a>Markdown基本书写规范</h3><h4 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h4><p>Markdown可以使用h1~h6来设置文章标题，其中<code>一个#</code>表示一级标题，<code>2个#</code>表示二级标题，具体如:  </p><pre class=" language-lang-html"><code class="language-lang-html">#这是一级标题##这是二级标题###这是三级标题####这是四级标题#####这是五级标题######这是六级标题</code></pre><p>除了上面这种方法，还可以用=或者-来表示，但不推荐，具体如下：   </p><pre class=" language-lang-html"><code class="language-lang-html">这是一级标题   ===============</code></pre><h4 id="段落"><a href="#段落" class="headerlink" title="段落"></a>段落</h4><p>段落大多使用两个以上空格加回车   </p><pre class=" language-lang-html"><code class="language-lang-html">这是一段文字   >敲两个空格加回车</code></pre><h4 id="字体"><a href="#字体" class="headerlink" title="字体"></a>字体</h4><h5 id="斜体"><a href="#斜体" class="headerlink" title="斜体"></a>斜体</h5><p>斜体用<code>一个*</code>包裹文本或者<code>下划线_</code>   </p><pre class=" language-lang-html"><code class="language-lang-html">*这是斜体*   _ 这是斜体_</code></pre><blockquote><p><em>这是斜体</em><br><em> 这是斜体</em>     </p><h5 id="粗体"><a href="#粗体" class="headerlink" title="粗体"></a>粗体</h5><p>斜体用<code>两个*</code>包裹文本或者<code>两个下划线_</code>    </p><pre class=" language-lang-html"><code class="language-lang-html">**这是斜体**   __ 这是斜体__</code></pre><p><strong>这是粗体体</strong><br><strong> 这是粗体</strong>    </p><h5 id="粗斜体"><a href="#粗斜体" class="headerlink" title="粗斜体"></a>粗斜体</h5><p>斜体用<code>三个*</code>包裹文本或者<code>三个下划线_</code>    </p><pre class=" language-lang-html"><code class="language-lang-html">***这是斜体***   ___ 这是斜体___</code></pre><p><strong><em>这是粗体体</em></strong><br><strong><em> 这是粗体</em></strong>   </p><h5 id="分格线"><a href="#分格线" class="headerlink" title="分格线"></a>分格线</h5><p>三格*或三格-或三个_   </p><pre class=" language-lang-html"><code class="language-lang-html">***   ---   _ _ _</code></pre><h2 id><a href="#" class="headerlink" title="*   "></a><em>*</em>   </h2><hr><h4 id="删除线"><a href="#删除线" class="headerlink" title="删除线"></a>删除线</h4><p>在文字前后加<code>两个</code>波浪线~   </p><pre class=" language-lang-html"><code class="language-lang-html">~~删除线~~</code></pre><p><del>删除线</del>    </p><h4 id="下滑线"><a href="#下滑线" class="headerlink" title="下滑线"></a>下滑线</h4><p>可以用html的<code>&lt;u&gt;</code></p><pre class=" language-lang-html"><code class="language-lang-html"><u>下滑线 </u></code></pre><p><u>下滑线 </u>   </p><h3 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h3><h4 id="无序列表"><a href="#无序列表" class="headerlink" title="无序列表"></a>无序列表</h4><p>使用星号<code>(*)</code>、加号<code>(+)</code>或是减号<code>(-)</code>作为列表标记，这些标记后面要添加一个空格.   </p><pre class=" language-lang-html"><code class="language-lang-html">* 第一项* 第二项* 第三项</code></pre><ul><li>第一项   </li><li>第一项</li><li>第一项   <h4 id="有序列表"><a href="#有序列表" class="headerlink" title="有序列表"></a>有序列表</h4>直接使用数字加空格   <pre class=" language-lang-html"><code class="language-lang-html">1.我是1号   2.我是2号   3.我是3号</code></pre>1.我是1号<br>2.我是2号<br>3.我是3号   <h4 id="列表嵌套"><a href="#列表嵌套" class="headerlink" title="列表嵌套"></a>列表嵌套</h4>列表嵌套只需在子列表中的选项前面添加四个空格<br>```html   </li><li>第一项<br>  1.我是1号</li><li>第二项<br>  2.我是2号 </li><li>第三项<br>  3.我是3号<pre><code>### 代码和区块   #### 区块   区块引用是在段落开头使用` &gt; `符号 ，然后后面紧跟一个空格符号：   ```html这是区块</code></pre>这是区块   <h4 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h4>片段代码用在文字两侧加两个反引号`   <pre class=" language-lang-html"><code class="language-lang-html">` 这是片段代码`</code></pre><code>这是片段代码</code>       </li></ul></blockquote><p>整体代码 用三个反引号包裹，并在第一个后面写上语言   </p><pre class=" language-lang-html"><code class="language-lang-html">$(document).ready(function () &#123;    alert('RUNOOB');</code></pre><blockquote><p>$(document).ready(function () {<br>    alert(‘RUNOOB’);   </p><h3 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h3><p><code>[链接名](链接地址)</code> 链接前面写链接名称，后面写链接地址   </p><pre class=" language-lang-html"><code class="language-lang-html">[百度](https://www.baidu.com/)</code></pre><p>百度      <a href="https://www.baidu.com/">https://www.baidu.com/</a></p></blockquote><h3 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h3><p>![alt 属性文本](图片地址)   感叹号加文本加图片地址   </p><pre class=" language-lang-html"><code class="language-lang-html">![alt 属性文本](图片地址)</code></pre><blockquote><p><img src="/posts/23825.htm/图片地址" alt="alt 属性文本">      </p></blockquote><h3 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h3><p>Markdown 制作表格使用 | 来分隔不同的单元格，使用 - 来分隔表头和其他行。语法格式如下：   </p><pre class=" language-lang-html"><code class="language-lang-html">|  表头   | 表头  ||  ----  | ----  || 单元格  | 单元格 || 单元格  | 单元格 |</code></pre><blockquote><div class="table-container"><table><thead><tr><th>表头</th><th>表头</th></tr></thead><tbody><tr><td>单元格</td><td>单元格</td></tr><tr><td>单元格</td><td>单元格</td></tr></tbody></table></div></blockquote><p>我们可以设置表格的对齐方式：   </p><pre class=" language-lang-html"><code class="language-lang-html">-: 设置内容和标题栏居右对齐。:- 设置内容和标题栏居左对齐。:-: 设置内容和标题栏居中对齐。</code></pre><blockquote><p>-: 设置内容和标题栏居右对齐。<br>:- 设置内容和标题栏居左对齐。<br>:-: 设置内容和标题栏居中对齐。</p></blockquote><h3 id="高级"><a href="#高级" class="headerlink" title="高级"></a>高级</h3><h4 id="转义"><a href="#转义" class="headerlink" title="转义"></a>转义</h4><p>\反斜杠可以转义   </p><pre class=" language-lang-html"><code class="language-lang-html">**文本加粗** \*\* 正常显示星号 \*\*</code></pre><blockquote><p><strong>文本加粗</strong><br>** 正常显示星号 **     </p><h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>markdown 作为一门标记性语言，上手难度可谓相当简单，只要我们用心学，把基本常用的学会，就行了，同时，这也是写博客的必备技能，我相信每个人花个半个小时都能学会。</p></blockquote>]]></content>
+      
+      
+      <categories>
+          
+          <category> markdown </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Markdown </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>关于zouwen博客食用方法</title>
+      <link href="/posts/%E5%A4%9C%E4%B9%8B%E6%B5%81%E6%98%9F.html"/>
+      <url>/posts/%E5%A4%9C%E4%B9%8B%E6%B5%81%E6%98%9F.html</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><!-- <div class="note info">前言：本文是关于itsNeko开源博客食用方法详解，感谢使用本开源博客。时间过的好快，还好我都记录下来了。</div>### zouwen介绍- 基于itsNeko开源博客是基于Hexo博客Matery主题魔改，感谢各位对本博客的喜爱与支持。- 作者Hello，itsNeko，我是本博客的作者，itsNeko博主博客: <a href="https://dyfa.top/" target="_blank">itsNeko博客~</a>- 赞赏如果你觉得本开源博客还可以，欢迎大家的赞赏，赞赏二维码见页面：<a href="https://dyfa.top/donate/" target="_blank">赞赏itsNeko开源博主~</a>- 提示本博客为纯静态，无数据库，文章使用markdown格式，图片存在json里面，整体打包上传至服务器即可。- 建议最好懂一点编程知识，建议使用VsCode，善于使用<code>“ ctrl+F ”</code>快捷键定位然后修改自定义内容。### 源码下载及命令- 本开源博客源码已公开在在博主的GitHub仓库，国内也可使用Gitee，希望得到各位的<code>小星星，Star</code>。- GitHub仓库：<a href="https://github.com/nekodeng/hexo-theme-itsneko.git" target="_blank">itsNeko开源博客源码GitHub地址</a>- Gitee仓库：<a href="https://gitee.com/nekodeng/hexo-theme-itsneko.git" target="_blank">itsNeko开源博客源码Gitee地址</a>- 首先，新建一个文件夹名为“ <code>nekoblog</code> ”，在该文件夹下打开git bash，执行命令行```git clone https://github.com/nekodeng/hexo-theme-itsneko.git或者使用国内的giteegit clone https://gitee.com/nekodeng/hexo-theme-itsneko.git``` --><ul><li>将下载的整个文件夹在VsCode中打开，在终端中依次执行以下命令行</li></ul><pre><code>npm installhexo cleanhexo ghexo s</code></pre><ul><li>然后在浏览器中，打开“ <a href="http://localhost:4000/">http://localhost:4000/</a> ”，即可实时预览网站，再依次修改网站内容。</li></ul><p>注意：依次执行完上述4条命令后，若遇到报错极大概率是npm install的问题，也可能是网络问题，建议删除整个“ node_modules ”文件夹，然后重新执行上述命令行。</p><h3 id="各页面配置详解"><a href="#各页面配置详解" class="headerlink" title="各页面配置详解"></a>各页面配置详解</h3><h4 id="首页"><a href="#首页" class="headerlink" title="首页"></a>首页</h4><h5 id="1、网站标题描述等"><a href="#1、网站标题描述等" class="headerlink" title="1、网站标题描述等"></a>1、网站标题描述等</h5><p>在<code>/nekoblog/_config.yml</code>文件中，使用“ ctrl+F ”快捷键定位到<code>“ Site ”</code>，然后自行修改内容。</p><h5 id="2、logo图片与logo字体"><a href="#2、logo图片与logo字体" class="headerlink" title="2、logo图片与logo字体"></a>2、logo图片与logo字体</h5><ul><li>logo图片:<br>在<code>/themes/_config.yml</code>文件中，使用“ ctrl+F ”快捷键定位到<code>“ 配置网站favicon和网站LOGO ”</code>，然后自行修改图片并注意图片格式（此处建议图片大小为180*116最佳）。</li><li>logo字体:<br>在<code>/themes/layout/_partial/header.ejs</code>文件中，使用“ ctrl+F ”快捷键定位到<code>“ itsNeko-openSource-Blog ”</code>，然后自行修改大屏幕和小屏幕下logo字体（此处建议小屏下字体数目不宜过多）。 </li></ul><h5 id="3、banner图上打字效果字体"><a href="#3、banner图上打字效果字体" class="headerlink" title="3、banner图上打字效果字体"></a>3、banner图上打字效果字体</h5><p>在<code>/themes/_config.yml</code>文件中，使用“ ctrl+F ”快捷键定位到<code>“ sub1 ”</code>，然后自行修改。</p><h5 id="4、《质数的孤独》内容部分"><a href="#4、《质数的孤独》内容部分" class="headerlink" title="4、《质数的孤独》内容部分"></a>4、《质数的孤独》内容部分</h5><p>在<code>/themes/layout/_widget/dream.ejs</code>文件中，使用“ ctrl+F ”快捷键定位到<code>“ 《质数的孤独》 ”</code>，然后自行修改标题和内容。</p><h5 id="5、公告栏作者等内容部分"><a href="#5、公告栏作者等内容部分" class="headerlink" title="5、公告栏作者等内容部分"></a>5、公告栏作者等内容部分</h5><p>在<code>/themes/layout/index.ejs</code>文件中，使用“ ctrl+F ”快捷键定位到<code>“ 公告文字栏开始 ”</code>，然后自行修改内容。</p><h5 id="6、footer内容部分"><a href="#6、footer内容部分" class="headerlink" title="6、footer内容部分"></a>6、footer内容部分</h5><p>在<code>/themes/layout/_partial/footer.ejs</code>文件中，使用“ ctrl+F ”快捷键定位到<code>“ 版权信息 ”</code>，然后自行修改各类内容；此处还要在<code>/themes/_config.yml</code>文件中，使用“ ctrl+F ”快捷键定位到<code>“ socialLink ”</code>，然后自行修改。</p><h4 id="关于"><a href="#关于" class="headerlink" title="关于"></a>关于</h4><h5 id="1、配置个人信息"><a href="#1、配置个人信息" class="headerlink" title="1、配置个人信息"></a>1、配置个人信息</h5><p>在<code>/themes/_config.yml</code>文件中，使用“ ctrl+F ”快捷键定位到<code>“ profile ”</code>，然后自行修改头像、职业和个人介绍。</p><h5 id="2、个人介绍内容"><a href="#2、个人介绍内容" class="headerlink" title="2、个人介绍内容"></a>2、个人介绍内容</h5><p>在<code>/themes/layout/about.ejs</code>文件中，使用“ ctrl+F ”快捷键定位到<code>“ 关于我哦 ”</code>，然后自行个人介绍介绍。</p><h4 id="相册"><a href="#相册" class="headerlink" title="相册"></a>相册</h4><h5 id="1、页面介绍"><a href="#1、页面介绍" class="headerlink" title="1、页面介绍"></a>1、页面介绍</h5><p>在<code>/themes/layout/galley.ejs</code>文件中，使用“ ctrl+F ”快捷键定位到<code>“ itsNeko开源博客相册 ”</code>，然后自行修改此内容。</p><h5 id="2、相册数据"><a href="#2、相册数据" class="headerlink" title="2、相册数据"></a>2、相册数据</h5><p>相册是存在json里面的，在<code>/nekoblog/source/_data/galley.json</code>文件中。一个相册就是在一个&#123;&#125;对象内的json数据。</p><h5 id="3、新建一个相册流程"><a href="#3、新建一个相册流程" class="headerlink" title="3、新建一个相册流程"></a>3、新建一个相册流程</h5><ul><li>首先，找到<code>/nekoblog/source/galley</code>文件夹。</li><li>复制已存在的“ itsNeko博主的绘画作品 ”文件夹，并取名。</li><li>打开新取名文件夹下的index.md文件，然后修改title字段必须与新取名文件夹名称相同，否则运行报错。</li><li>然后，在<code>/nekoblog/source/_data/galley.json</code>文件中，复制已存在的&#123;&#125;对象内的json数据，与第一段并以逗号区隔，然后修改新相册的各类内容。并注意：<code>name，url_name，album内的title这三个字段内容必须与新取名文件夹名称相同，否则运行报错。</code></li></ul><h4 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h4><h5 id="增加友情链接"><a href="#增加友情链接" class="headerlink" title="增加友情链接"></a>增加友情链接</h5><ul><li>友链信息是存储在<code>/nekoblog/source/_data/friends.json</code>文件中，一个友链就是在一个&#123;&#125;对象内的json数据，自行增添。</li></ul><h5 id="增加网址收藏"><a href="#增加网址收藏" class="headerlink" title="增加网址收藏"></a>增加网址收藏</h5><ul><li>网址收藏信息是存储在<code>/nekoblog/source/_data/collection.json</code>文件中，一个网址信息就是在一个&#123;&#125;对象内的json数据，自行增添。</li></ul><h4 id="其余"><a href="#其余" class="headerlink" title="其余"></a>其余</h4><p>其余页面自定义修改的内容不多，或者没必要修改，这里给出其余页面的对应文件，可自行根据需要定位到对应页面文件中进行修改。</p><ul><li><code>书单 -&gt; /themes/layout/books.ejs</code></li><li><code>留言板 -&gt; /themes/layout/contact.ejs</code></li><li><code>实战项目 -&gt; /themes/layout/project.ejs</code></li><li><code>博客打赏记录 -&gt; /themes/layout/donate.ejs</code></li><li><code>ticktack -&gt; /themes/layout/ticktack.ejs</code></li><li><code>实战项目 -&gt; /themes/layout/project.ejs</code></li><li><code>vlog -&gt; /themes/layout/videos.ejs</code><br>使用“ ctrl+F ”快捷键定位到<code>“ src=”//player.bilibili ”</code>，然后自行修改两个视频的src，建议使用B站的外链。</li><li><code>music -&gt; /themes/layout/musics.ejs</code><br>使用“ ctrl+F ”快捷键定位到<code>“ id=” ”</code>，然后自行修改两个歌单的id，建议使用网易云和QQ音乐的外链。</li><li><code>urls.txt -&gt; /nekoblog/urls.txt</code>将内容替换成自己网站的url地址即可。</li><li><code>网站2个_config.yml文件 -&gt; 主要是网站的总体配置，自行打开两个文件然后只修改里面的包含个人信息的部分，其余不动。</code></li></ul><h3 id="撰写第一篇文章"><a href="#撰写第一篇文章" class="headerlink" title="撰写第一篇文章"></a>撰写第一篇文章</h3><ul><li>修改完个人信息后，你便可以撰写属于你的第一篇文章啦。</li><li>文章采用markdown语法，所有文章存储在<code>/nekoblog/source/_posts</code>文件夹中。</li><li>这里我已给出常用的两类文章模板，可直接复制粘贴然后（修改文章名，链接后缀建议用英文，标签建议只用一个，分类，时间，以及文章banner图片）形成新的文章。</li></ul><h3 id="怎样开通评论"><a href="#怎样开通评论" class="headerlink" title="怎样开通评论"></a>怎样开通评论</h3><ul><li>本开源博客使用valine评论，环境以及搭好，只需填写valine配置数据即可。</li><li>自行根据网上教程得到配置数据，关键词 “ Hexo 博客添加 Valine 评论系统 ”，教程之一：<a href="https://www.zhyong.cn/posts/95cb/" target="_blank">Hexo 博客添加 Valine 评论系统</a></li><li>注意：本开源博客中已经搭好了环境，<code>比如valine.min.js，valine.ejs等文件已经存在，不用再根据教程添加这些文件</code>，只需根据教程步骤配置其余，然后获取到 APP ID 和 APP KEY。</li><li>然后，将获取到的 APP ID 和 APP KEY，在<code>/themes/_config.yml</code>文件中，使用“ ctrl+F ”快捷键定位到<code>“ valine ”</code>，然后自行修改appId，appKey值即可。</li><li>多说一句，若最后评论功能总是报错，不知道怎么弄，那么建议一切根据外链教程（这个不行，换个完整版教程）操作，可替换本博客已经存在的环境文件，<code>学会自己独立使用浏览器解决问题</code>。</li></ul><h3 id="网站怎样上线"><a href="#网站怎样上线" class="headerlink" title="网站怎样上线"></a>网站怎样上线</h3><ul><li><p><code>免费版 使用gitee免费托管</code><br>关键词，“ Hexo部署到Gitee ”，随机教程：<a href="https://blog.csdn.net/qq_38157825/article/details/112783631" target="_blank">Hexo 部署到 Gitee</a></p></li><li><p><code>收费版 自行购买域名服务器</code><br>关键词，“ Hexo部署到自己服务器 ”</p></li></ul><h3 id="七零八碎补充"><a href="#七零八碎补充" class="headerlink" title="七零八碎补充"></a>七零八碎补充</h3><p>可自行根据需要定位到对应文件中进行修改。</p><ul><li><p><code>赞赏二维码图片 -&gt; /themes/source/medias/reward</code></p></li><li><p><code>鼠标左键点击文字 -&gt; /themes/source/js/click_show_text.js</code></p></li><li><p><code>网站标题栏和footer栏背景颜色 -&gt; /themes/source/css/matery.css</code><br>在该文件中使用“ ctrl+F ”快捷键定位到<code>“ 网站标题栏和footer栏背景颜色 ”</code>，然后自行修改颜色。</p></li><li><p><code>各大页面banner图 -&gt; 若你不想使用默认图片，将以下代码复制到对应页面ejs文件中并修改图片链接即可。</code></p></li></ul><pre><code>    &lt;style&gt;      /* banner背景图 */      .bg-cover &#123;          background-image: url(&quot;图片链接地址&quot;)!important;      &#125;    &lt;/style&gt;</code></pre><h3 id="怎样联系itsNeko"><a href="#怎样联系itsNeko" class="headerlink" title="怎样联系itsNeko"></a>怎样联系itsNeko</h3><ul><li>留言：zouwen博客地址:<a href="https://github.com/zouwen726" target="_blank">zouwen博客~</a></li><li>邮箱：2535685121@qq.com</li><li>QQ: 2535685121</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> zouwen博客食用方法 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 关于zouwen博客 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>这是技术文章模板</title>
+      <link href="/posts/articletemplate.html"/>
+      <url>/posts/articletemplate.html</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><div class="note info">前言，技术文章前言技术文章前言技术文章前言技术文章前言技术文章前言技术文章前言技术文章前言技术文章前言技术文章前言技术文章前言技术文章前言技术文章前言技术文章前言。</div><h3 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h3><ul><li>项目1</li><li>项目2</li><li>项目3</li></ul><p>正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文</p><p><img src="/posts/articletemplate.htm/图片url" alt="图片介绍"></p><p><code>正文一些需要高亮色的文字</code></p><p><a href="链接地址" class="LinkCard" target="_blank">引入链接</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 技术 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 技术 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>这是随笔文章模板</title>
+      <link href="/posts/essay-demo.html"/>
+      <url>/posts/essay-demo.html</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h4 id="这是博主的随笔板块，后续会更新文章，目前弄好了模板格式"><a href="#这是博主的随笔板块，后续会更新文章，目前弄好了模板格式" class="headerlink" title="这是博主的随笔板块，后续会更新文章，目前弄好了模板格式~"></a>这是博主的随笔板块，后续会更新文章，目前弄好了模板格式~</h4><div class="ipage">    <div class="ititle">节选自《你若安好便是晴天》- 前言</div>  <div class="izhengwen">  <p>几场梅雨，几卷荷风，江南已是烟水迷离。小院里湿润的青苔在雨中纯净生长。这个季节，许多人都在打听关于莲荷的消息，以及茉莉在黄昏浮动的神秘幽香。不知多少人会记得有个女子，曾经走过人间四月天，又与莲开的夏季有过相濡以沫的约定。</p>  <p>一个人，一本书，一杯茶，一帘梦。有时候，寂寞是这样叫人心动，也只有此刻，世事才会如此波澜不惊。凉风吹起书页，这烟雨让尘封在书卷里的词章和故事弥漫着潮湿的气息。独倚幽窗，看转角处的青石小巷，一柄久违的油纸伞，遮住了低过屋檐的光阴。</p>  <p>时光微凉，那一场远去的往事被春水浸泡，秋风吹拂，早已洗去铅华，清绝明净。以为历经人生匆匆聚散，尝过尘世种种烟火，应该承担岁月带给我们的沧桑。可流年分明安然无恙，而山石草木是这样毫发无伤。只是曾经许过地老天荒的城，在细雨中越发地清瘦单薄。</p>  <p>青梅煎好的茶水，还是当年的味道；而我们等候的人，不会再来。后来才知道，那一袭素色白衣的女子已化身为燕，去寻觅水乡旧巢。她走过的地方，有一树一树的花开，她呢喃的梁间，还留着余温犹存的梦。有人说，她是个冰洁的女子，所以无论人世如何变迁，她都有着美丽的容颜。有人说，她是个理智的女子，不管面临怎样的诱惑，最后都可以全身而退。</p>  <p>她叫林徽因，出生于杭州，是许多人梦中期待的白莲。她在雨雾之都伦敦，发生过一场空前绝后的康桥之恋。她爱过三个男子，爱得清醒，也爱得平静。徐志摩为她徜徉在康桥，深情地等待一场旧梦可以归来。梁思成与她携手走过千山万水，为完成使命而相约白头。金岳霖为她终身不娶，痴心不改地守候一世。可她懂得人生飘忽不定，要学会随遇而安。</p>  </div></div>]]></content>
+      
+      
+      <categories>
+          
+          <category> 随笔 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 随笔 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+  
+  
+</search>
