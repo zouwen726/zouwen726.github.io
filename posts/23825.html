@@ -127,7 +127,7 @@
         })();
     </script>
 <meta name="generator" content="Hexo 5.0.2"><link rel="alternate" href="/atom.xml" title="夜之流星" type="application/atom+xml">
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+</head>
 
 
 <!-- 提示：若要开启春节或者圣诞主题样式，直接给body标签添加一个class为
@@ -1378,7 +1378,7 @@ h3:hover {
             <div id="articleContent">
                 <h3 id="Markdown简介"><a href="#Markdown简介" class="headerlink" title="Markdown简介"></a>Markdown简介</h3><p>Markdown 是一种轻量级标记语言，它允许人们使用易读易写的纯文本格式编写文档。 由约翰·格鲁2004伯创建，Markdown 编写的文档可以导出 HTML 、Word、图像、PDF、Epub 等多种格式的文档，Markdown 编写的文档后缀为 .md, 或者.markdown。Markdown 能被使用来撰写电子书，如：Gitbook，当前许多网站都广泛使用 Markdown 来撰写帮助文档或是用于论坛上发表消息。例如：GitHub、简书、reddit 等等。   </p>
 <h3 id="Markdown基本书写规范"><a href="#Markdown基本书写规范" class="headerlink" title="Markdown基本书写规范"></a>Markdown基本书写规范</h3><h4 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h4><p>Markdown可以使用h1~h6来设置文章标题，其中<code>一个#</code>表示一级标题，<code>2个#</code>表示二级标题，具体如:  </p>
-<pre class=" language-lang-html"><code class="language-lang-html">#这是一级标题
+<pre><code class="lang-html">#这是一级标题
 ##这是二级标题
 ###这是三级标题
 ####这是四级标题
@@ -1386,51 +1386,51 @@ h3:hover {
 ######这是六级标题
 </code></pre>
 <p>除了上面这种方法，还可以用=或者-来表示，但不推荐，具体如下：   </p>
-<pre class=" language-lang-html"><code class="language-lang-html">这是一级标题   
+<pre><code class="lang-html">这是一级标题   
 ===============
 </code></pre>
 <h4 id="段落"><a href="#段落" class="headerlink" title="段落"></a>段落</h4><p>段落大多使用两个以上空格加回车   </p>
-<pre class=" language-lang-html"><code class="language-lang-html">这是一段文字   >敲两个空格加回车
+<pre><code class="lang-html">这是一段文字   &gt;敲两个空格加回车
 </code></pre>
 <h4 id="字体"><a href="#字体" class="headerlink" title="字体"></a>字体</h4><h5 id="斜体"><a href="#斜体" class="headerlink" title="斜体"></a>斜体</h5><p>斜体用<code>一个*</code>包裹文本或者<code>下划线_</code>   </p>
-<pre class=" language-lang-html"><code class="language-lang-html">*这是斜体*   
+<pre><code class="lang-html">*这是斜体*   
 _ 这是斜体_
 </code></pre>
 <blockquote>
 <p><em>这是斜体</em><br><em> 这是斜体</em>     </p>
 <h5 id="粗体"><a href="#粗体" class="headerlink" title="粗体"></a>粗体</h5><p>斜体用<code>两个*</code>包裹文本或者<code>两个下划线_</code>    </p>
-<pre class=" language-lang-html"><code class="language-lang-html">**这是斜体**   
+<pre><code class="lang-html">**这是斜体**   
 __ 这是斜体__
 </code></pre>
 <p><strong>这是粗体体</strong><br><strong> 这是粗体</strong>    </p>
 <h5 id="粗斜体"><a href="#粗斜体" class="headerlink" title="粗斜体"></a>粗斜体</h5><p>斜体用<code>三个*</code>包裹文本或者<code>三个下划线_</code>    </p>
-<pre class=" language-lang-html"><code class="language-lang-html">***这是斜体***   
+<pre><code class="lang-html">***这是斜体***   
 ___ 这是斜体___
 </code></pre>
 <p><strong><em>这是粗体体</em></strong><br><strong><em> 这是粗体</em></strong>   </p>
 <h5 id="分格线"><a href="#分格线" class="headerlink" title="分格线"></a>分格线</h5><p>三格*或三格-或三个_   </p>
-<pre class=" language-lang-html"><code class="language-lang-html">***   
+<pre><code class="lang-html">***   
 ---   
 _ _ _
 </code></pre>
 <h2 id><a href="#" class="headerlink" title="*   "></a><em>*</em>   </h2><hr>
 <h4 id="删除线"><a href="#删除线" class="headerlink" title="删除线"></a>删除线</h4><p>在文字前后加<code>两个</code>波浪线~   </p>
-<pre class=" language-lang-html"><code class="language-lang-html">~~删除线~~
+<pre><code class="lang-html">~~删除线~~
 </code></pre>
 <p><del>删除线</del>    </p>
 <h4 id="下滑线"><a href="#下滑线" class="headerlink" title="下滑线"></a>下滑线</h4><p>可以用html的<code>&lt;u&gt;</code></p>
-<pre class=" language-lang-html"><code class="language-lang-html"><u>下滑线 </u>
+<pre><code class="lang-html">&lt;u&gt;下滑线 &lt;/u&gt;
 </code></pre>
 <p><u>下滑线 </u>   </p>
 <h3 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h3><h4 id="无序列表"><a href="#无序列表" class="headerlink" title="无序列表"></a>无序列表</h4><p>使用星号<code>(*)</code>、加号<code>(+)</code>或是减号<code>(-)</code>作为列表标记，这些标记后面要添加一个空格.   </p>
-<pre class=" language-lang-html"><code class="language-lang-html">* 第一项
+<pre><code class="lang-html">* 第一项
 * 第二项
 * 第三项
 </code></pre>
 <ul>
 <li>第一项   </li>
 <li>第一项</li>
-<li>第一项   <h4 id="有序列表"><a href="#有序列表" class="headerlink" title="有序列表"></a>有序列表</h4>直接使用数字加空格   <pre class=" language-lang-html"><code class="language-lang-html">1.我是1号   
+<li>第一项   <h4 id="有序列表"><a href="#有序列表" class="headerlink" title="有序列表"></a>有序列表</h4>直接使用数字加空格   <pre><code class="lang-html">1.我是1号   
 2.我是2号   
 3.我是3号
 </code></pre>
@@ -1442,30 +1442,30 @@ _ _ _
 区块引用是在段落开头使用` &gt; `符号 ，然后后面紧跟一个空格符号：   
 ```html
 这是区块
-</code></pre>这是区块   <h4 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h4>片段代码用在文字两侧加两个反引号`   <pre class=" language-lang-html"><code class="language-lang-html">` 这是片段代码`
+</code></pre>这是区块   <h4 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h4>片段代码用在文字两侧加两个反引号`   <pre><code class="lang-html">` 这是片段代码`
 </code></pre>
 <code>这是片段代码</code>       </li>
 </ul>
 </blockquote>
 <p>整体代码 用三个反引号包裹，并在第一个后面写上语言   </p>
-<pre class=" language-lang-html"><code class="language-lang-html">$(document).ready(function () &#123;
-    alert('RUNOOB');
+<pre><code class="lang-html">$(document).ready(function () &amp;#123;
+    alert(&#39;RUNOOB&#39;);
 </code></pre>
 <blockquote>
 <p>$(document).ready(function () {<br>    alert(‘RUNOOB’);   </p>
 <h3 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h3><p><code>[链接名](链接地址)</code> 链接前面写链接名称，后面写链接地址   </p>
-<pre class=" language-lang-html"><code class="language-lang-html">[百度](https://www.baidu.com/)
+<pre><code class="lang-html">[百度](https://www.baidu.com/)
 </code></pre>
 <p>百度      <a href="https://www.baidu.com/">https://www.baidu.com/</a></p>
 </blockquote>
 <h3 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h3><p>![alt 属性文本](图片地址)   感叹号加文本加图片地址   </p>
-<pre class=" language-lang-html"><code class="language-lang-html">![alt 属性文本](图片地址)
+<pre><code class="lang-html">![alt 属性文本](图片地址)
 </code></pre>
 <blockquote>
 <p><img src="/posts/23825.htm/图片地址" alt="alt 属性文本">      </p>
 </blockquote>
 <h3 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h3><p>Markdown 制作表格使用 | 来分隔不同的单元格，使用 - 来分隔表头和其他行。语法格式如下：   </p>
-<pre class=" language-lang-html"><code class="language-lang-html">|  表头   | 表头  |
+<pre><code class="lang-html">|  表头   | 表头  |
 |  ----  | ----  |
 | 单元格  | 单元格 |
 | 单元格  | 单元格 |
@@ -1493,7 +1493,7 @@ _ _ _
 </div>
 </blockquote>
 <p>我们可以设置表格的对齐方式：   </p>
-<pre class=" language-lang-html"><code class="language-lang-html">-: 设置内容和标题栏居右对齐。
+<pre><code class="lang-html">-: 设置内容和标题栏居右对齐。
 :- 设置内容和标题栏居左对齐。
 :-: 设置内容和标题栏居中对齐。
 </code></pre>
@@ -1501,7 +1501,7 @@ _ _ _
 <p>-: 设置内容和标题栏居右对齐。<br>:- 设置内容和标题栏居左对齐。<br>:-: 设置内容和标题栏居中对齐。</p>
 </blockquote>
 <h3 id="高级"><a href="#高级" class="headerlink" title="高级"></a>高级</h3><h4 id="转义"><a href="#转义" class="headerlink" title="转义"></a>转义</h4><p>\反斜杠可以转义   </p>
-<pre class=" language-lang-html"><code class="language-lang-html">**文本加粗** 
+<pre><code class="lang-html">**文本加粗** 
 \*\* 正常显示星号 \*\*
 </code></pre>
 <blockquote>
@@ -2459,7 +2459,7 @@ hexo s
 
       
       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;Total number of words: &nbsp;<span
-        class="white-color">8.7k</span>&nbsp;
+        class="white-color">8.9k</span>&nbsp;
       
       
       

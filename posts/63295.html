@@ -127,7 +127,7 @@
         })();
     </script>
 <meta name="generator" content="Hexo 5.0.2"><link rel="alternate" href="/atom.xml" title="夜之流星" type="application/atom+xml">
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+</head>
 
 
 <!-- 提示：若要开启春节或者圣诞主题样式，直接给body标签添加一个class为
@@ -1359,7 +1359,7 @@ h3:hover {
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    555
+                    557
                 </div>
                 
 
@@ -1379,7 +1379,7 @@ h3:hover {
                 <h2 id="SEO优化"><a href="#SEO优化" class="headerlink" title="SEO优化"></a>SEO优化</h2><blockquote>
 <p>搜索引擎优化，又称为 SEO，即 Search Engine Optimization，它是一种通过分析搜索引擎的排名规律，了解各种搜索引擎怎样进行搜索、怎样抓取互联网页面、怎样确定特定关键词的搜索结果排名的技术。Google 自动收录效果还不错，百度就差得远了（GitHub不允许百度的Spider爬取GitHub上的内容）。</p>
 </blockquote>
-<h3 id="安装-sitemap-插件"><a href="#安装-sitemap-插件" class="headerlink" title="安装 sitemap 插件"></a>安装 sitemap 插件</h3><pre class=" language-lang-bash"><code class="language-lang-bash">
+<h3 id="安装-sitemap-插件"><a href="#安装-sitemap-插件" class="headerlink" title="安装 sitemap 插件"></a>安装 sitemap 插件</h3><pre><code class="lang-bash">
 npm install hexo-generator-sitemap --save
 npm install hexo-generator-baidu-sitemap --save  #百度专用
 </code></pre>
@@ -1392,22 +1392,22 @@ npm install hexo-generator-baidu-sitemap --save  #百度专用
 <p>在人工自动提交的sitemap那里填写自己sitemap文件的URL地址即可</p>
 <p><img src="https://raw.githubusercontent.com/zouwen726/img/main/img202201121718479.png" alt><br>提交成功后等一会会有记录显示<br><img src="https://raw.githubusercontent.com/zouwen726/img/main/img202201121718480.png" alt></p>
 <h4 id="自动提交"><a href="#自动提交" class="headerlink" title="自动提交"></a>自动提交</h4><p>主题配置文件中配置：</p>
-<pre class=" language-lang-yaml"><code class="language-lang-yaml"># 百度搜索资源平台提交链接
+<pre><code class="lang-yaml"># 百度搜索资源平台提交链接
 baiduPush: true
 </code></pre>
 <p>主动推送方式<br>安装主动推送插件：hexo-baidu-url-submit</p>
-<pre class=" language-lang-bash"><code class="language-lang-bash">hexo-baidu-url-submit
+<pre><code class="lang-bash">hexo-baidu-url-submit
 </code></pre>
 <p>然后打开hexo配置文件，在末尾加入以下配置：</p>
-<pre class=" language-lang-yaml"><code class="language-lang-yaml">baidu_url_submit:
+<pre><code class="lang-yaml">baidu_url_submit:
   count: 80 # 提交最新的一个链接
   host: blog.sky03.cn # 在百度站长平台中注册的域名
   token: xxxxxxx # 请注意这是您的秘钥， 所以请不要把博客源代码发布在公众仓库里!
   path: baidu_urls.txt # 文本文档的地址， 新链接会保存在此文本文档里
 </code></pre>
 <p>密钥token写下面这个<br><img src="https://raw.githubusercontent.com/zouwen726/img/main/img202201121739499.png" alt><br>再加入新的deploy：</p>
-<pre class=" language-lang-yaml"><code class="language-lang-yaml">deploy:
-  type: 'git'
+<pre><code class="lang-yaml">deploy:
+  type: &#39;git&#39;
   repository: git@github.com:zouwen726/zouwen726.github.io.git
   branch: main
   type: baidu_url_submitter
@@ -2361,7 +2361,7 @@ baiduPush: true
 
       
       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;Total number of words: &nbsp;<span
-        class="white-color">8.7k</span>&nbsp;
+        class="white-color">8.9k</span>&nbsp;
       
       
       

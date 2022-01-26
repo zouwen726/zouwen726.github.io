@@ -84,7 +84,7 @@
     }
 }
 body {
-    background-color: #eaeaea;
+    background-color: #def0f8;
     /* background-color: lavender;
     background-image: linear-gradient(45deg,
     rgba(255,255,255,.15) 25%,
@@ -336,6 +336,7 @@ mark {
 }
 
 .card {
+   /* background: url(https://img.zcool.cn/community/01a9315542f0fc0000019ae937f2d4.jpg@2o.jpg) top; */
     border-radius: 10px;
     box-shadow: 0 15px 35px rgba(50, 50, 93, .1), 0 5px 15px rgba(0, 0, 0, .07) !important;
 }
@@ -3815,8 +3816,9 @@ body.dark #artDetail .v[data-class=v] .vcards {
     body.dark .card
     {
         background: url(https://7.dusays.com/2021/01/15/1313017cd1a15.png) top!important;
-    } */
-/* 小花花背景图结束 */
+    } */ 
+    
+/* 小花花背景图结束
 
 /* 旋转小樱花按钮 */
 body.dark .yinghua {
@@ -3918,5 +3920,5 @@ nav,
 .nav-menu li .sub-nav, 
 .menus_item_child:before
 {
-  background-color: #039be5;
+  background-color: #66c3f1;
 }

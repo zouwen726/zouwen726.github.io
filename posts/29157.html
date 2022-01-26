@@ -127,7 +127,7 @@
         })();
     </script>
 <meta name="generator" content="Hexo 5.0.2"><link rel="alternate" href="/atom.xml" title="夜之流星" type="application/atom+xml">
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+</head>
 
 
 <!-- 提示：若要开启春节或者圣诞主题样式，直接给body标签添加一个class为
@@ -1359,7 +1359,7 @@ h3:hover {
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    741
+                    743
                 </div>
                 
 
@@ -1404,7 +1404,7 @@ h3:hover {
 <p>上面<code>user.name</code>和<code>user.mail</code>替换自己的即可    </p>
 <h3 id="配置密钥"><a href="#配置密钥" class="headerlink" title="配置密钥"></a>配置密钥</h3><p>作用：用于连接GitHub上传博客   </p>
 <p>首先在本地生成 ssh 密钥文件，输入如下命令后直接三次回车即可</p>
-<pre class=" language-lang-bash"><code class="language-lang-bash">    ssh-keygen -t rsa -C "2535685121@qq.com"
+<pre><code class="lang-bash">    ssh-keygen -t rsa -C &quot;2535685121@qq.com&quot;
 </code></pre>
 <ul>
 <li><p>一般执行上述命令之后，会生成 <code>id_rsa</code> 和 <code>id_rsa.pub</code>两个文件，前者是我们私有的，而后者则是对外开放的   </p>
@@ -1416,7 +1416,7 @@ h3:hover {
 <p><img src="https://raw.githubusercontent.com/zouwen726/img/main/img202201121407210.png" alt><br>2.在里面输入<code>type id_rsa.pub</code> 然后就能看到密钥，复制密钥   </p>
 </li>
 </ul>
-<pre class=" language-lang-html"><code class="language-lang-html">type id_rsa.pub
+<pre><code class="lang-html">type id_rsa.pub
 </code></pre>
 <p> <img src="https://raw.githubusercontent.com/zouwen726/img/main/img202201121408917.png" alt></p>
 <ul>
@@ -1429,7 +1429,7 @@ h3:hover {
 <ul>
 <li>输入ssh -T git@github.com，如果如下图所示，出现你的用户名，那就成功了。     </li>
 </ul>
-<pre class=" language-lang-bash"><code class="language-lang-bash"> ssh -T git@github.com
+<pre><code class="lang-bash"> ssh -T git@github.com
 </code></pre>
 <blockquote>
 <p>如果提示Are you sure you want to continue connecting (yes/no)?，输入yes，<br>看到这个信息说明SSH已配置成功！   </p>
@@ -1441,21 +1441,21 @@ h3:hover {
 <ul>
 <li>定位到该目录下，输入npm i hexo-cli -g安装      </li>
 </ul>
-<pre class=" language-lang-bash"><code class="language-lang-bash">npm i hexo-cli -g
+<pre><code class="lang-bash">npm i hexo-cli -g
 </code></pre>
 <ul>
 <li>Hexo安装完后输入hexo -v验证是否安装成功     </li>
 </ul>
-<pre class=" language-lang-html"><code class="language-lang-html">hexo -v
+<pre><code class="lang-html">hexo -v
 </code></pre>
 <h3 id="初始化博客"><a href="#初始化博客" class="headerlink" title="初始化博客"></a>初始化博客</h3><p>初始化博客</p>
-<pre class=" language-lang-html"><code class="language-lang-html">hexo init
+<pre><code class="lang-html">hexo init
 </code></pre>
 <p>然后生成静态博客文件  </p>
-<pre class=" language-lang-htnl"><code class="language-lang-htnl">hexo g
+<pre><code class="lang-htnl">hexo g
 </code></pre>
 <p>本地预览博客</p>
-<pre class=" language-lang-html"><code class="language-lang-html">hexo s
+<pre><code class="lang-html">hexo s
 </code></pre>
 <p>在浏览器中输入 <a target="_blank" rel="noopener" href="http://localhost:4000">http://localhost:4000</a>   </p>
 <p>如果出现以下画面就说明成功了！   </p>
@@ -1465,7 +1465,7 @@ h3:hover {
 <li><p>安装 hexo-deployer-git      </p>
 </li>
 </ul>
-<pre class=" language-lang-bash"><code class="language-lang-bash">hexo-deployer-git
+<pre><code class="lang-bash">hexo-deployer-git
 </code></pre>
 <ul>
 <li><p>打开博客根目录下的_config.yml文件，这是博客的配置文件，在这里你可以修改与博客相关的各种信息。   </p>
@@ -1473,13 +1473,13 @@ h3:hover {
 <li><p>修改最后一行的配置：  </p>
 </li>
 </ul>
-<pre class=" language-lang-html"><code class="language-lang-html">  deploy:
+<pre><code class="lang-html">  deploy:
   type: git
   repository: https://zouwen726.github.io
   branch: main
 </code></pre>
 <h2 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h2><p>推送到github   </p>
-<pre class=" language-lang-bash"><code class="language-lang-bash">hexo d
+<pre><code class="lang-bash">hexo d
 </code></pre>
 
             </div>
@@ -2422,7 +2422,7 @@ h3:hover {
 
       
       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;Total number of words: &nbsp;<span
-        class="white-color">8.7k</span>&nbsp;
+        class="white-color">8.9k</span>&nbsp;
       
       
       

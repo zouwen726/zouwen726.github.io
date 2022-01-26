@@ -127,7 +127,7 @@
         })();
     </script>
 <meta name="generator" content="Hexo 5.0.2"><link rel="alternate" href="/atom.xml" title="夜之流星" type="application/atom+xml">
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+</head>
 
 
 <!-- 提示：若要开启春节或者圣诞主题样式，直接给body标签添加一个class为
@@ -1359,14 +1359,14 @@ h3:hover {
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2.4k
+                    2.5k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    9 分
+                    10 分
                 </div>
                 
 
@@ -1377,110 +1377,110 @@ h3:hover {
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h3 id="新建分类-categories-页"><a href="#新建分类-categories-页" class="headerlink" title="新建分类 categories 页"></a>新建分类 categories 页</h3><p> <code>categories</code> 页是用来展示所有分类的页面，如果 <code>source</code> 目录下还没有 <code>categories/index.md</code> 文件，那么就需要新建一个，命令如下：      </p>
-<pre class=" language-lang-bash"><code class="language-lang-bash"> hexo new page "categories"
+<pre><code class="lang-bash"> hexo new page &quot;categories&quot;
 </code></pre>
 <p> 编辑你刚刚新建的页面文件 /source/<code>categories/index.md</code>，至少需要以下内容：   </p>
-<pre class=" language-lang-yaml"><code class="language-lang-yaml">---
+<pre><code class="lang-yaml">---
 title: categories
 date: 2018-09-30 17:25:30
-type: "categories"
-layout: "categories"
+type: &quot;categories&quot;
+layout: &quot;categories&quot;
 ---
 </code></pre>
 <h3 id="新建标签-tags-页"><a href="#新建标签-tags-页" class="headerlink" title="新建标签 tags 页"></a>新建标签 tags 页</h3><p> <code>tags</code> 页是用来展示所有标签的页面，如果 source 目录下还没有 <code>tags/index.md</code> 文件，那么就需要新建一个，命令如下：   </p>
-<pre class=" language-lang-bash"><code class="language-lang-bash"> hexo new page "tags"
+<pre><code class="lang-bash"> hexo new page &quot;tags&quot;
 </code></pre>
 <p>编辑刚刚新建的页面文件 <code>/source/tags/index.md</code>，至少需要以下内容：   </p>
-<pre class=" language-lang-yaml"><code class="language-lang-yaml">---
+<pre><code class="lang-yaml">---
 title: tags
 date: 2018-09-30 18:23:38
-type: "tags"
-layout: "tags"
+type: &quot;tags&quot;
+layout: &quot;tags&quot;
 ---
 </code></pre>
 <h3 id="新建关于我-about-页"><a href="#新建关于我-about-页" class="headerlink" title="新建关于我 about 页"></a>新建关于我 about 页</h3><p> about 页是用来展示关于我和我的博客信息的页面，如果 source 目录下还没有 about/index.md 文件，那么就需要新建一个，命令如下：  </p>
-<pre class=" language-lang-bash"><code class="language-lang-bash">new page "about"
+<pre><code class="lang-bash">new page &quot;about&quot;
 </code></pre>
 <p>编辑刚刚新建的页面文件 <code>/source/about/index.md</code>，至少需要以下内容：</p>
-<pre class=" language-lang-yaml"><code class="language-lang-yaml">---
+<pre><code class="lang-yaml">---
 title: about
 date: 2018-09-30 17:25:30
-type: "about"
-layout: "about"
+type: &quot;about&quot;
+layout: &quot;about&quot;
 ---
 </code></pre>
 <h3 id="新建友情连接-friends-页（可选的）"><a href="#新建友情连接-friends-页（可选的）" class="headerlink" title="新建友情连接 friends 页（可选的）"></a>新建友情连接 friends 页（可选的）</h3><p>friends 页是用来展示友情连接信息的页面，如果 source 目录下还没有 friends/index.md 文件，那么就需要新建一个，命令如下：</p>
-<pre class=" language-lang-bash"><code class="language-lang-bash">hexo new page "friends"
+<pre><code class="lang-bash">hexo new page &quot;friends&quot;
 </code></pre>
 <p>编辑刚刚新建的页面文件<code>/source/friends/index.md</code>，至少需要以下内容：   </p>
-<pre class=" language-lang-yaml"><code class="language-lang-yaml">---
+<pre><code class="lang-yaml">---
 title: friends
 date: 2018-12-12 21:25:30
-type: "friends"
-layout: "friends"
+type: &quot;friends&quot;
+layout: &quot;friends&quot;
 ---
 </code></pre>
 <p>同时，在 source 目录下新建 _data 目录，在 _data 目录中新建 friends.json 文件，文件内容如下所示：  </p>
-<pre class=" language-lang-json"><code class="language-lang-json">[
-  &#123;
-    "avatar": "https://www.lixl.cn/medias/avatar.jpg",
-    "name": "wfsfds",
-    "introduction": "人生就是一场修行，上善若水，厚德载物。",
-    "url": "https://www.lixl.cn/",
-    "title": "前去参观"
-  &#125;,
-  &#123;
-    "avatar": "https://wiki.hyperledger.org/download/attachments/2392069/fabric?version=1&modificationDate=1540928132000&api=v2",
-    "name": "Fabric",
-    "introduction": "A Blockchain Platform for the Enterprise",
-    "url": "https://hyperledger-fabric.readthedocs.io/en/master/",
-    "title": "前去学习"
-  &#125;,
-  &#123;
-    "avatar": "https://www.bootcdn.cn/assets/img/maoyun.svg",
-    "name": "BootCDN",
-    "introduction": "稳定、快速、免费的前端开源项目 CDN 加速服务。",
-    "url": "https://www.bootcdn.cn/",
-    "title": "前去加速"
-  &#125;
+<pre><code class="lang-json">[
+  &amp;#123;
+    &quot;avatar&quot;: &quot;https://www.lixl.cn/medias/avatar.jpg&quot;,
+    &quot;name&quot;: &quot;wfsfds&quot;,
+    &quot;introduction&quot;: &quot;人生就是一场修行，上善若水，厚德载物。&quot;,
+    &quot;url&quot;: &quot;https://www.lixl.cn/&quot;,
+    &quot;title&quot;: &quot;前去参观&quot;
+  &amp;#125;,
+  &amp;#123;
+    &quot;avatar&quot;: &quot;https://wiki.hyperledger.org/download/attachments/2392069/fabric?version=1&amp;modificationDate=1540928132000&amp;api=v2&quot;,
+    &quot;name&quot;: &quot;Fabric&quot;,
+    &quot;introduction&quot;: &quot;A Blockchain Platform for the Enterprise&quot;,
+    &quot;url&quot;: &quot;https://hyperledger-fabric.readthedocs.io/en/master/&quot;,
+    &quot;title&quot;: &quot;前去学习&quot;
+  &amp;#125;,
+  &amp;#123;
+    &quot;avatar&quot;: &quot;https://www.bootcdn.cn/assets/img/maoyun.svg&quot;,
+    &quot;name&quot;: &quot;BootCDN&quot;,
+    &quot;introduction&quot;: &quot;稳定、快速、免费的前端开源项目 CDN 加速服务。&quot;,
+    &quot;url&quot;: &quot;https://www.bootcdn.cn/&quot;,
+    &quot;title&quot;: &quot;前去加速&quot;
+  &amp;#125;
 ]
 </code></pre>
 <h3 id="代码高亮"><a href="#代码高亮" class="headerlink" title="代码高亮"></a>代码高亮</h3><p>由于 Hexo 自带的代码高亮主题显示不好看，所以主题中使用到了 hexo-prism-plugin 的 Hexo 插件来做代码高亮，安装命令如下：</p>
-<pre class=" language-lang-bash"><code class="language-lang-bash">npm i -S hexo-prism-plugin
+<pre><code class="lang-bash">npm i -S hexo-prism-plugin
 </code></pre>
 <p>然后，修改 Hexo 根目录下 _config.yml 文件中 highlight.enable 的值为 false，并新增 prism 插件相关的配置，主要配置如下：</p>
-<pre class=" language-lang-yaml"><code class="language-lang-yaml">highlight:
+<pre><code class="lang-yaml">highlight:
   enable: false
 
 prism_plugin:
-  mode: "preprocess" # realtime/preprocess
-  theme: "tomorrow"
+  mode: &quot;preprocess&quot; # realtime/preprocess
+  theme: &quot;tomorrow&quot;
   line_number: false # default false
   custom_css:
 </code></pre>
 <h3 id="搜索"><a href="#搜索" class="headerlink" title="搜索"></a>搜索</h3><p>本主题中还使用到了 <code>hexo-generator-search</code> 的 Hexo 插件来做内容搜索，安装命令如下：</p>
-<pre class=" language-lang-bash"><code class="language-lang-bash">npm install hexo-generator-search --save
+<pre><code class="lang-bash">npm install hexo-generator-search --save
 </code></pre>
 <p>在 Hexo 根目录下的 _config.yml 文件中，新增以下的配置项：</p>
-<pre class=" language-lang-yaml"><code class="language-lang-yaml">search:
+<pre><code class="lang-yaml">search:
   path: search.xml
   field: post
 </code></pre>
 <h3 id="修改页脚"><a href="#修改页脚" class="headerlink" title="修改页脚"></a>修改页脚</h3><p>页脚信息可能需要做定制化修改，而且它不便于做成配置信息，所以可能需要你自己去再修改和加工。修改的地方在主题文件的 /layout/_partial/footer.ejs 文件中，包括站点、使用的主题、访问量等。</p>
 <p>修改社交链接<br>在主题的 _config.yml 文件中，默认支持 QQ、GitHub 和邮箱的配置，可以在主题文件的 /layout/_partial/social-link.ejs 文件中，新增、修改需要的社交链接地址，增加链接可参考如下代码：</p>
-<pre class=" language-lang-html"><code class="language-lang-html"><a
-  href="https://github.com/blinkfox"
-  class="tooltipped"
-  target="_blank"
-  data-tooltip="访问我的GitHub"
-  data-position="top"
-  data-delay="50"
->
-  <i class="fa fa-github"></i>
-</a>
+<pre><code class="lang-html">&lt;a
+  href=&quot;https://github.com/blinkfox&quot;
+  class=&quot;tooltipped&quot;
+  target=&quot;_blank&quot;
+  data-tooltip=&quot;访问我的GitHub&quot;
+  data-position=&quot;top&quot;
+  data-delay=&quot;50&quot;
+&gt;
+  &lt;i class=&quot;fa fa-github&quot;&gt;&lt;/i&gt;
+&lt;/a&gt;
 </code></pre>
 <p>其中，社交图标（如：fa-github）可以在 Font Awesome 中搜索找到。以下是常用社交图标的标识，供参考：</p>
-<pre class=" language-lang-yaml"><code class="language-lang-yaml">Facebook: fa-facebook
+<pre><code class="lang-yaml">Facebook: fa-facebook
 Twitter: fa-twitter
 Google-plus: fa-google-plus
 Linkedin: fa-linkedin
@@ -1493,10 +1493,10 @@ QQ: fa-qq
 </code></pre>
 <h3 id="修改打赏的二维码图片"><a href="#修改打赏的二维码图片" class="headerlink" title="修改打赏的二维码图片"></a>修改打赏的二维码图片</h3><p>在主题文件的 source/medias/reward 文件中，可以替换成你的的微信和支付宝的打赏二维码图片。</p>
 <h3 id="一键部署"><a href="#一键部署" class="headerlink" title="一键部署"></a>一键部署</h3><p>通过 <code>hexo-deployer-git</code> 插件可以实现一键将博客同时部署到多个 git 仓库中。如同时发布到 github 及 gitee 提供的 pages 服务。安装：</p>
-<pre class=" language-lang-bash"><code class="language-lang-bash">npm install hexo-deployer-git --save
+<pre><code class="lang-bash">npm install hexo-deployer-git --save
 </code></pre>
 <p>修改 Hexo 根目录下的 _config.yml 文件中的如下内容:</p>
-<pre class=" language-lang-yaml"><code class="language-lang-yaml">## Docs: https://hexo.io/docs/deployment.html
+<pre><code class="lang-yaml">## Docs: https://hexo.io/docs/deployment.html
 deploy:
   - type: git
     repo: https://github.com/lxl80/blog.git
@@ -1508,10 +1508,10 @@ deploy:
     ignore_hidden: false
 </code></pre>
 <p>也可以如本站一样，采用 hexo-deployer-cos-enhanced 插件将静态内容部署到腾讯云对象存储服务中，在 DNS 配置中将境内线路解析到腾讯云 CDN 地址，实现加速。部署完成后会自动刷新被更新文件的 CDN 缓存。<br>安装：</p>
-<pre class=" language-lang-bash"><code class="language-lang-bash">npm install hexo-deployer-cos-enhanced --save
+<pre><code class="lang-bash">npm install hexo-deployer-cos-enhanced --save
 </code></pre>
 <p>_config.yml 配置如下:</p>
-<pre class=" language-lang-yaml"><code class="language-lang-yaml">deploy:
+<pre><code class="lang-yaml">deploy:
   - type: git
     repo: https://github.com/lxl80/blog.git
     branch: gh-pages
@@ -1533,10 +1533,10 @@ deploy:
 <p>然后通过 hexo g -d 即可实现一键发布，并更新 CDN 缓存。</p>
 <h3 id="文章链接转静态短地址（建议安装）"><a href="#文章链接转静态短地址（建议安装）" class="headerlink" title="文章链接转静态短地址（建议安装）"></a>文章链接转静态短地址（建议安装）</h3><p>如果文章名称是中文的，那么 Hexo 默认生成的永久链接也会有中文，这样不利于 SEO，且 gitment 评论对中文链接也不支持。我们可以用 hexo-permalink-pinyin Hexo 插件生成文章时生成中文拼音的永久链接，或者用hexo-abbrlink 生成静态文章链接。以下结合 hexo-abbrlink 生成类似 /yyyy/mmdd+随机数.html 的文章链接地址。</p>
 <p>安装命令如下：</p>
-<pre class=" language-lang-bash"><code class="language-lang-bash">npm install hexo-abbrlink --save
+<pre><code class="lang-bash">npm install hexo-abbrlink --save
 </code></pre>
 <p>在 Hexo 根目录下的 _config.yml 文件中，修改 permalink: ，并在文件末尾新增 abbrlink:配置项：</p>
-<pre class=" language-lang-yaml"><code class="language-lang-yaml">permalink: :year/:month:day:abbrlink.html
+<pre><code class="lang-yaml">permalink: :year/:month:day:abbrlink.html
 abbrlink:
   alg: crc16 #算法选项：crc16丨crc32
   rep: dec #输出进制：dec为十进制，hex为十六进制
@@ -1554,27 +1554,27 @@ abbrlink:
 <p>还可以配合 PicGo图床上传工具的自定义域名前缀来上传图片，使用极其方便。具体使用方法可参见我的另一篇文章: 使用 Typora+iPic/PicGo 图床+CDN 实现高效 Markdown 创作</p>
 <h3 id="文章字数统计插件（可选的）"><a href="#文章字数统计插件（可选的）" class="headerlink" title="文章字数统计插件（可选的）"></a>文章字数统计插件（可选的）</h3><p>如果你想要在文章中显示文章字数、阅读时长信息，可以安装 hexo-wordcount插件。</p>
 <p>安装命令如下：</p>
-<pre class=" language-lang-bash"><code class="language-lang-bash">npm i --save hexo-wordcount
+<pre><code class="lang-bash">npm i --save hexo-wordcount
 </code></pre>
 <p>然后只需在本主题下的 _config.yml 文件中，激活以下配置项即可：</p>
-<pre class=" language-lang-yaml"><code class="language-lang-yaml">wordCount:
+<pre><code class="lang-yaml">wordCount:
   enable: false # 将这个值设置为 true 即可.
   postWordCount: true
   min2read: true
   totalCount: true
 </code></pre>
 <h3 id="添加-RSS-订阅支持（可选的）"><a href="#添加-RSS-订阅支持（可选的）" class="headerlink" title="添加 RSS 订阅支持（可选的）"></a>添加 RSS 订阅支持（可选的）</h3><p>本主题中还使用到了 hexo-generator-feed 的 Hexo 插件来做 RSS，安装命令如下：</p>
-<pre class=" language-lang-html"><code class="language-lang-html">npm install hexo-generator-feed --save
+<pre><code class="lang-html">npm install hexo-generator-feed --save
 </code></pre>
 <p>在 Hexo 根目录下的 _config.yml 文件中，新增以下的配置项：</p>
-<pre class=" language-lang-yaml"><code class="language-lang-yaml">feed:
+<pre><code class="lang-yaml">feed:
   type: atom
   path: atom.xml
   limit: 20
   hub:
   content:
   content_limit: 140
-  content_limit_delim: " "
+  content_limit_delim: &quot; &quot;
   order_by: -date
 </code></pre>
 <p>执行 hexo clean &amp;&amp; hexo g 重新生成博客文件，然后在 public 文件夹中即可看到 atom.xml 文件，说明已经安装成功了。</p>
@@ -1599,21 +1599,21 @@ abbrlink:
 <p>Gitalk、Gitment、Valine 和 disqus 评论配置<br>不蒜子统计和谷歌分析（Google Analytics）<br>默认特色图的集合。当文章没有设置特色图时，本主题会根据文章标题的 hashcode 值取余，来选择展示对应的特色图   </p>
 <p>如果本主题中的诸多功能和主题色彩你不满意，可以在主题中自定义修改，很多更自由的功能和细节点的修改难以在主题的 _config.yml 中完成，需要修改源代码才来完成。以下列出了可能有用的地方：</p>
 <p>修改主题颜色<br>在主题文件的 /source/css/matery.css 文件中，搜索 .bg-color 来修改背景颜色：</p>
-<pre class=" language-lang-css"><code class="language-lang-css">/* 整体背景颜色，包括导航、移动端的导航、页尾、标签页等的背景颜色. */
-.bg-color &#123;
+<pre><code class="lang-css">/* 整体背景颜色，包括导航、移动端的导航、页尾、标签页等的背景颜色. */
+.bg-color &amp;#123;
   background-image: linear-gradient(to right, #4cbf30 0%, #0f9d58 100%);
-&#125;
+&amp;#125;
 
-@-webkit-keyframes rainbow &#123;
+@-webkit-keyframes rainbow &amp;#123;
   /* 动态切换背景颜色. */
-&#125;
+&amp;#125;
 
-@keyframes rainbow &#123;
+@keyframes rainbow &amp;#123;
   /* 动态切换背景颜色. */
-&#125;
+&amp;#125;
 </code></pre>
 <h3 id="修改-banner-图和文章特色图"><a href="#修改-banner-图和文章特色图" class="headerlink" title="修改 banner 图和文章特色图"></a>修改 banner 图和文章特色图</h3><p>可以直接在 /source/medias/banner 文件夹中更换喜欢的 banner 图片，主题代码中是每天动态切换一张，只需 7 张即可。如果会 JavaScript 代码，可以修改成自己喜欢切换逻辑，如：随机切换等，banner 切换的代码位置在 /layout/_partial/bg-cover-content.ejs 文件的 <script></script> 代码中：</p>
-<pre class=" language-lang-javascript"><code class="language-lang-javascript">$(".bg-cover").css("background-image", "url(/medias/banner/" + new Date().getDay() + ".jpg)");
+<pre><code class="lang-javascript">$(&quot;.bg-cover&quot;).css(&quot;background-image&quot;, &quot;url(/medias/banner/&quot; + new Date().getDay() + &quot;.jpg)&quot;);
 </code></pre>
 <p>在 /source/medias/featureimages 文件夹中默认有 24 张特色图片，你可以再增加或者减少，并需要在 _config.yml 做同步修改。</p>
 
@@ -2561,7 +2561,7 @@ abbrlink:
 
       
       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;Total number of words: &nbsp;<span
-        class="white-color">8.7k</span>&nbsp;
+        class="white-color">8.9k</span>&nbsp;
       
       
       
