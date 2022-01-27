@@ -4,7 +4,7 @@
 <meta name="google-site-verification" content="QhYVQPcgYttv7KMsT8TBndDyS9rBsmQkBCfBa-_532Q" />
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="这里是网站关键词">
+    <meta name="keywords" content="南昌时光机, 这里是网站关键词">
     <meta name="description" content="这里是网站描述">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -18,7 +18,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>夜之流星</title>
+    <title>南昌时光机 | 夜之流星</title>
     
     <script>
         // 隐藏
@@ -1018,61 +1018,31 @@ class="themespring" -->
 </div>
 <!-- 春节主题模式样式结束 -->
 
-    
-<style>
-    .carousel-control {
-        width: 45px;
-        height: 45px;
-        line-height: 55px;
-        border-radius: 45px;
-        background: transparent;
-        cursor: pointer;
-        z-index: 100;
-    }
+    <!-- 加密功能 -->
 
-    #prev-cover {
-        position: absolute;
-        top: 48%;
-        left: 8px;
-    }
+    <script src="/libs/cryptojs/crypto-js.min.js"></script>
+    <script>
+        (function() {
+            let pwd = '';
 
-    #next-cover {
-        position: absolute;
-        top: 48%;
-        right: 8px;;
-    }
-
-    #prev-cover i {
-        margin-right: 3px;
-    }
-
-    #next-cover i {
-        margin-left: 3px;
-    }
-
-    .carousel-control:hover {
-        background-color: rgba(0, 0, 0, .4);
-    }
-
-    .carousel-control i {
-        color: #fff;
-        font-size: 2.4rem;
-    }
-</style>
+            if (pwd && pwd.length > 0) {
+                if (pwd !== CryptoJS.SHA256(prompt('请输入密码才可访问哒~')).toString(CryptoJS.enc.Hex)) {
+                    alert('密码错误哦，将返回相册页面哦~');
+                    location.href = '/gallery';
+                }
+            }
+        })();
+    </script>
 
 
-
-<div class="carousel carousel-slider center index-cover" data-indicators="true" style="margin-top: -64px;">
-    
-
-    <div class="carousel-item red white-text bg-cover about-cover">
-        <div class="container">
-            <div class="row">
+<!-- <div class="bg-cover pd-header about-cover">
+    <div class="container">
+        <div class="row">
     <div class="col s10 offset-s1 m8 offset-m2 l8 offset-l2">
         <div class="brand">
             <div class="title center-align">
                 
-                    夜之流星
+                    南昌时光机
                  
             </div>
 
@@ -1104,1169 +1074,461 @@ class="themespring" -->
 </script>
 
 
-
-            <div class="cover-btns">
-                <a href="#indexCard" class="waves-effect waves-light btn">
-                    <i class="fa fa-angle-double-down"></i>开始阅读
-                </a>
-
-                
-                    <a href="https://github.com/zouwen726" class="waves-effect waves-light btn" target="_blank">
-                        <i class="fab fa-github-alt"></i>Github
-                    </a>
-                
-            </div>
-            <div class="cover-social-link">
-    <a href="https://github.com/zouwen726" class="tooltipped" target="_blank" data-tooltip="GitHub" data-position="top" data-delay="50">
-        <i class="fab fa-github"></i>
-    </a>
-
-
-
-
-
-    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=2535685121" class="tooltipped" target="_blank" data-tooltip="2535685121" data-position="top" data-delay="50">
-        <i class="fab fa-qq"></i>
-    </a>
-
-
-
+    </div>
+    <div class="mohuxiaoguo"></div>
 </div>
+
+ -->
+
+<link rel="stylesheet" href="/libs/MyGallery/css/baguetteBox.css">
+<!-- 该主题自带的lightGallery.js在图片多的时候会很卡，所以弃用，使用了一个我在网上找的baguetteBox，很轻量级，就是功能少了点 -->
+<script src="/libs/MyGallery/js/baguetteBox.js"></script> 
+<style>    
+    #sma {
+        bottom: 150px;
+    }
+    .my-gallery .photo img {
+        
+        transition: all 0.6s ease-in-out; 
+    }     
+    .my-gallery .photo:hover img {
+        opacity: 0.6;
+        transform: scale(1.05);
+    }      
+    .my-gallery {
+        margin: 20px auto;
+    }   
+    .miaoshus .title {
+        font-family: MV Boli;
+    }
+    .miaoshus {
+        padding: 20px;
+        border: 1px dashed #e6e6e6;
+        color: #969696;
+        position: relative;
+        display: inline-block;
+        width: 75%;
+        background: #fbfbfb50;
+        border-radius: 10px;
+        font-size: 16px;
+        margin: 24px auto 12px;
+        
+    }
+    body.dark .miaoshus {
+        background: 0 0;
+        border: 1px dashed #888;
+    }
+    body {
+        overflow: visible!important;
+    }
+    .box {
+            position: relative;
+            max-width: 1064px;
+        }
+    .box img {
+        object-fit: cover;
+        /* max-width: 350px; */
+        width: 350px;
+        height: 500px;
+        vertical-align: top;
+        padding: 8px;
+        border-radius: 20px;
+        transition: all 0.5s;
+    }
+    .box img:hover {
+        transform: scale(1.05);
+    }
+    .page-footer {
+        display: none
+    }
+    body {
+        overflow-y: visible!important;
+    }
+    header {
+        background-color: #000;
+    }
+    .biaotiss {
+            font-family: MV Boli;
+        }   
+    canvas {
+        opacity: 0.3!important;
+    }
+    @media only screen and (max-width: 1058px) {
+        .box {
+            margin-left: 145px;
+        }
+    }
+    @media only screen and (max-width: 770px) {
+        .box {
+            margin-left: 15px;
+        }
+    }
+    @media only screen and (max-width: 500px) {
+        #previous-button, #next-button {
+            display: none;
+        }
+    }
+    @media only screen and (max-width: 380px) {
+        .box {
+            margin-left: -5px;
+        }
+    }
+    @media only screen and (max-width: 323px) {
+        .box img {
+            width: 296px;
+            left: 0;
+        }
+    }
+</style>
+
+<div class="tag-title center-align">
+        <div class="miaoshus">
+            <!-- 福袋按钮 -->
+        <div class="caishendeng">        
+            <div class="guguxian">
+                <img class="caishenpic gugus" src="/medias/spring-img/jiaozi.png" />
+            </div>              
+        </div>
+        <div class="title center-align">
+            “ 
+                南昌时光机
+              ”
+        </div>
+        “ 夜之流星 ”
+        “ 这里有光影流年，还有两朵穿衣裳的云。”
+    </div>
+</div>
+
+<!-- 相册 -->
+<section class="gallery">
+    <div id="myGallery" class="my-gallery">
+        <div class="row">
+            <div class="box">
+            
+                
+                
+                                       
+                        <a target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/zouwen726/img1/img202201271553080.jpg" data-caption="">
+                            <img class="mat" src="/medias/loading.svg" data-src="https://cdn.jsdelivr.net/gh/zouwen726/img1/img202201271553080.jpg" alt="img"+0 >
+                        </a>                   
+                
+                                       
+                        <a target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/zouwen726/img1/img202201271620086.jpg" data-caption="">
+                            <img class="mat" src="/medias/loading.svg" data-src="https://cdn.jsdelivr.net/gh/zouwen726/img1/img202201271620086.jpg" alt="img"+1 >
+                        </a>                   
+                
+                                       
+                        <a target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/zouwen726/img1/img202201271620835.jpg" data-caption="">
+                            <img class="mat" src="/medias/loading.svg" data-src="https://cdn.jsdelivr.net/gh/zouwen726/img1/img202201271620835.jpg" alt="img"+2 >
+                        </a>                   
+                
+                                       
+                        <a target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/zouwen726/img1/img202201271620133.jpg" data-caption="">
+                            <img class="mat" src="/medias/loading.svg" data-src="https://cdn.jsdelivr.net/gh/zouwen726/img1/img202201271620133.jpg" alt="img"+3 >
+                        </a>                   
+                
+                                       
+                        <a target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/zouwen726/img1/img202201271620530.jpg" data-caption="">
+                            <img class="mat" src="/medias/loading.svg" data-src="https://cdn.jsdelivr.net/gh/zouwen726/img1/img202201271620530.jpg" alt="img"+4 >
+                        </a>                   
+                
+                                       
+                        <a target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/zouwen726/img1/img202201271620124.jpg" data-caption="">
+                            <img class="mat" src="/medias/loading.svg" data-src="https://cdn.jsdelivr.net/gh/zouwen726/img1/img202201271620124.jpg" alt="img"+5 >
+                        </a>                   
+                
+                                       
+                        <a target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/zouwen726/img1/img202201271624620.jpg" data-caption="">
+                            <img class="mat" src="/medias/loading.svg" data-src="https://cdn.jsdelivr.net/gh/zouwen726/img1/img202201271624620.jpg" alt="img"+6 >
+                        </a>                   
+                
+                                       
+                        <a target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/zouwen726/img1/img202201271623525.jpg" data-caption="">
+                            <img class="mat" src="/medias/loading.svg" data-src="https://cdn.jsdelivr.net/gh/zouwen726/img1/img202201271623525.jpg" alt="img"+7 >
+                        </a>                   
+                
+                                       
+                        <a target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/zouwen726/img1/img202201271623783.jpg" data-caption="">
+                            <img class="mat" src="/medias/loading.svg" data-src="https://cdn.jsdelivr.net/gh/zouwen726/img1/img202201271623783.jpg" alt="img"+8 >
+                        </a>                   
+                
+                                       
+                        <a target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/zouwen726/img1/img202201271623794.jpg" data-caption="">
+                            <img class="mat" src="/medias/loading.svg" data-src="https://cdn.jsdelivr.net/gh/zouwen726/img1/img202201271623794.jpg" alt="img"+9 >
+                        </a>                   
+                
+                                       
+                        <a target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/zouwen726/img1/img202201271624602.jpg" data-caption="">
+                            <img class="mat" src="/medias/loading.svg" data-src="https://cdn.jsdelivr.net/gh/zouwen726/img1/img202201271624602.jpg" alt="img"+10 >
+                        </a>                   
+                
+                                       
+                        <a target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/zouwen726/img1/img202201271624170.jpg" data-caption="">
+                            <img class="mat" src="/medias/loading.svg" data-src="https://cdn.jsdelivr.net/gh/zouwen726/img1/img202201271624170.jpg" alt="img"+11 >
+                        </a>                   
+                
+                                       
+                        <a target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/zouwen726/img1/img202201271624509.jpg" data-caption="">
+                            <img class="mat" src="/medias/loading.svg" data-src="https://cdn.jsdelivr.net/gh/zouwen726/img1/img202201271624509.jpg" alt="img"+12 >
+                        </a>                   
+                
+                                       
+                        <a target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/zouwen726/img1/img202201271624620.jpg" data-caption="">
+                            <img class="mat" src="/medias/loading.svg" data-src="https://cdn.jsdelivr.net/gh/zouwen726/img1/img202201271624620.jpg" alt="img"+13 >
+                        </a>                   
+                
+                                       
+                        <a target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/zouwen726/img1/img202201271627286.jpg" data-caption="">
+                            <img class="mat" src="/medias/loading.svg" data-src="https://cdn.jsdelivr.net/gh/zouwen726/img1/img202201271627286.jpg" alt="img"+14 >
+                        </a>                   
+                
+                                       
+                        <a target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/zouwen726/img1/img202201271627754.jpg" data-caption="">
+                            <img class="mat" src="/medias/loading.svg" data-src="https://cdn.jsdelivr.net/gh/zouwen726/img1/img202201271627754.jpg" alt="img"+15 >
+                        </a>                   
+                
+                                       
+                        <a target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/zouwen726/img1/img202201271627766.jpg" data-caption="">
+                            <img class="mat" src="/medias/loading.svg" data-src="https://cdn.jsdelivr.net/gh/zouwen726/img1/img202201271627766.jpg" alt="img"+16 >
+                        </a>                   
+                
+                                       
+                        <a target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/zouwen726/img1/img202201271627027.jpg" data-caption="">
+                            <img class="mat" src="/medias/loading.svg" data-src="https://cdn.jsdelivr.net/gh/zouwen726/img1/img202201271627027.jpg" alt="img"+17 >
+                        </a>                   
+                
+                                       
+                        <a target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/zouwen726/img1/img202201271627919.jpg" data-caption="">
+                            <img class="mat" src="/medias/loading.svg" data-src="https://cdn.jsdelivr.net/gh/zouwen726/img1/img202201271627919.jpg" alt="img"+18 >
+                        </a>                   
+                
+                                       
+                        <a target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/zouwen726/img1/img202201271628063.jpg" data-caption="">
+                            <img class="mat" src="/medias/loading.svg" data-src="https://cdn.jsdelivr.net/gh/zouwen726/img1/img202201271628063.jpg" alt="img"+19 >
+                        </a>                   
+                
+                                       
+                        <a target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/zouwen726/img1/img202201271628738.jpg" data-caption="">
+                            <img class="mat" src="/medias/loading.svg" data-src="https://cdn.jsdelivr.net/gh/zouwen726/img1/img202201271628738.jpg" alt="img"+20 >
+                        </a>                   
+                
+                                       
+                        <a target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/zouwen726/img1/img202201271628900.jpg" data-caption="">
+                            <img class="mat" src="/medias/loading.svg" data-src="https://cdn.jsdelivr.net/gh/zouwen726/img1/img202201271628900.jpg" alt="img"+21 >
+                        </a>                   
+                
+                                       
+                        <a target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/zouwen726/img1/img202201271628280.jpg" data-caption="">
+                            <img class="mat" src="/medias/loading.svg" data-src="https://cdn.jsdelivr.net/gh/zouwen726/img1/img202201271628280.jpg" alt="img"+22 >
+                        </a>                   
+                
+                                       
+                        <a target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/zouwen726/img1/img202201271628240.jpg" data-caption="">
+                            <img class="mat" src="/medias/loading.svg" data-src="https://cdn.jsdelivr.net/gh/zouwen726/img1/img202201271628240.jpg" alt="img"+23 >
+                        </a>                   
+                
+                                       
+                        <a target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/zouwen726/img1/img202201271628102.jpg" data-caption="">
+                            <img class="mat" src="/medias/loading.svg" data-src="https://cdn.jsdelivr.net/gh/zouwen726/img1/img202201271628102.jpg" alt="img"+24 >
+                        </a>                   
+                
+                                       
+                        <a target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/zouwen726/img1/img202201271629823.jpg" data-caption="">
+                            <img class="mat" src="/medias/loading.svg" data-src="https://cdn.jsdelivr.net/gh/zouwen726/img1/img202201271629823.jpg" alt="img"+25 >
+                        </a>                   
+                
+                                       
+                        <a target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/zouwen726/img1/img202201271629733.jpg" data-caption="">
+                            <img class="mat" src="/medias/loading.svg" data-src="https://cdn.jsdelivr.net/gh/zouwen726/img1/img202201271629733.jpg" alt="img"+26 >
+                        </a>                   
+                
+                                       
+                        <a target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/zouwen726/img1/img202201271629966.jpg" data-caption="">
+                            <img class="mat" src="/medias/loading.svg" data-src="https://cdn.jsdelivr.net/gh/zouwen726/img1/img202201271629966.jpg" alt="img"+27 >
+                        </a>                   
+                
+                                       
+                        <a target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/zouwen726/img1/img202201271629204.jpg" data-caption="">
+                            <img class="mat" src="/medias/loading.svg" data-src="https://cdn.jsdelivr.net/gh/zouwen726/img1/img202201271629204.jpg" alt="img"+28 >
+                        </a>                   
+                
+                                       
+                        <a target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/zouwen726/img1/img202201271629875.jpg" data-caption="">
+                            <img class="mat" src="/medias/loading.svg" data-src="https://cdn.jsdelivr.net/gh/zouwen726/img1/img202201271629875.jpg" alt="img"+29 >
+                        </a>                   
+                
+                                       
+                        <a target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/zouwen726/img1/img202201271630653.jpg" data-caption="">
+                            <img class="mat" src="/medias/loading.svg" data-src="https://cdn.jsdelivr.net/gh/zouwen726/img1/img202201271630653.jpg" alt="img"+30 >
+                        </a>                   
+                
+                                       
+                        <a target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/zouwen726/img1/img202201271636161.jpg" data-caption="">
+                            <img class="mat" src="/medias/loading.svg" data-src="https://cdn.jsdelivr.net/gh/zouwen726/img1/img202201271636161.jpg" alt="img"+31 >
+                        </a>                   
+                
+                                       
+                        <a target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/zouwen726/img1/img202201271637691.jpg" data-caption="">
+                            <img class="mat" src="/medias/loading.svg" data-src="https://cdn.jsdelivr.net/gh/zouwen726/img1/img202201271637691.jpg" alt="img"+32 >
+                        </a>                   
+                
+                                       
+                        <a target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/zouwen726/img1/img202201271637847.jpg" data-caption="">
+                            <img class="mat" src="/medias/loading.svg" data-src="https://cdn.jsdelivr.net/gh/zouwen726/img1/img202201271637847.jpg" alt="img"+33 >
+                        </a>                   
+                
+                                       
+                        <a target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/zouwen726/img1/img202201271637129.jpg" data-caption="">
+                            <img class="mat" src="/medias/loading.svg" data-src="https://cdn.jsdelivr.net/gh/zouwen726/img1/img202201271637129.jpg" alt="img"+34 >
+                        </a>                   
+                
+                                       
+                        <a target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/zouwen726/img1/img202201271637123.jpg" data-caption="">
+                            <img class="mat" src="/medias/loading.svg" data-src="https://cdn.jsdelivr.net/gh/zouwen726/img1/img202201271637123.jpg" alt="img"+35 >
+                        </a>                   
+                
+                                       
+                        <a target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/zouwen726/img1/img202201271638984.jpg" data-caption="">
+                            <img class="mat" src="/medias/loading.svg" data-src="https://cdn.jsdelivr.net/gh/zouwen726/img1/img202201271638984.jpg" alt="img"+36 >
+                        </a>                   
+                
+                                       
+                        <a target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/zouwen726/img1/img202201271638153.jpg" data-caption="">
+                            <img class="mat" src="/medias/loading.svg" data-src="https://cdn.jsdelivr.net/gh/zouwen726/img1/img202201271638153.jpg" alt="img"+37 >
+                        </a>                   
+                
+                                       
+                        <a target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/zouwen726/img1/img202201271638843.jpg" data-caption="">
+                            <img class="mat" src="/medias/loading.svg" data-src="https://cdn.jsdelivr.net/gh/zouwen726/img1/img202201271638843.jpg" alt="img"+38 >
+                        </a>                   
+                
+                                       
+                        <a target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/zouwen726/img1/img202201271638584.jpg" data-caption="">
+                            <img class="mat" src="/medias/loading.svg" data-src="https://cdn.jsdelivr.net/gh/zouwen726/img1/img202201271638584.jpg" alt="img"+39 >
+                        </a>                   
+                
+                                       
+                        <a target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/zouwen726/img1/img202201271638838.jpg" data-caption="">
+                            <img class="mat" src="/medias/loading.svg" data-src="https://cdn.jsdelivr.net/gh/zouwen726/img1/img202201271638838.jpg" alt="img"+40 >
+                        </a>                   
+                
+                                       
+                        <a target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/zouwen726/img1/img202201271639777.jpg" data-caption="">
+                            <img class="mat" src="/medias/loading.svg" data-src="https://cdn.jsdelivr.net/gh/zouwen726/img1/img202201271639777.jpg" alt="img"+41 >
+                        </a>                   
+                
+                                       
+                        <a target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/zouwen726/img1/img202201271639043.jpg" data-caption="">
+                            <img class="mat" src="/medias/loading.svg" data-src="https://cdn.jsdelivr.net/gh/zouwen726/img1/img202201271639043.jpg" alt="img"+42 >
+                        </a>                   
+                
+                                       
+                        <a target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/zouwen726/img1/img202201271639028.jpg" data-caption="">
+                            <img class="mat" src="/medias/loading.svg" data-src="https://cdn.jsdelivr.net/gh/zouwen726/img1/img202201271639028.jpg" alt="img"+43 >
+                        </a>                   
+                
+                                       
+                        <a target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/zouwen726/img1/img202201271639546.jpg" data-caption="">
+                            <img class="mat" src="/medias/loading.svg" data-src="https://cdn.jsdelivr.net/gh/zouwen726/img1/img202201271639546.jpg" alt="img"+44 >
+                        </a>                   
+                
+                                       
+                        <a target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/zouwen726/img1/img202201271639229.jpg" data-caption="">
+                            <img class="mat" src="/medias/loading.svg" data-src="https://cdn.jsdelivr.net/gh/zouwen726/img1/img202201271639229.jpg" alt="img"+45 >
+                        </a>                   
+                
+                                       
+                        <a target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/zouwen726/img1/img202201271643015.jpg" data-caption="">
+                            <img class="mat" src="/medias/loading.svg" data-src="https://cdn.jsdelivr.net/gh/zouwen726/img1/img202201271643015.jpg" alt="img"+46 >
+                        </a>                   
+                
+                                       
+                        <a target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/zouwen726/img1/img202201271643042.jpg" data-caption="">
+                            <img class="mat" src="/medias/loading.svg" data-src="https://cdn.jsdelivr.net/gh/zouwen726/img1/img202201271643042.jpg" alt="img"+47 >
+                        </a>                   
+                
+                                       
+                        <a target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/zouwen726/img1/img202201271644301.jpg" data-caption="">
+                            <img class="mat" src="/medias/loading.svg" data-src="https://cdn.jsdelivr.net/gh/zouwen726/img1/img202201271644301.jpg" alt="img"+48 >
+                        </a>                   
+                
+                                       
+                        <a target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/zouwen726/img1/img202201271644886.jpg" data-caption="">
+                            <img class="mat" src="/medias/loading.svg" data-src="https://cdn.jsdelivr.net/gh/zouwen726/img1/img202201271644886.jpg" alt="img"+49 >
+                        </a>                   
+                
+                                       
+                        <a target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/zouwen726/img1/img202201271644684.jpg" data-caption="">
+                            <img class="mat" src="/medias/loading.svg" data-src="https://cdn.jsdelivr.net/gh/zouwen726/img1/img202201271644684.jpg" alt="img"+50 >
+                        </a>                   
+                
+                                       
+                        <a target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/zouwen726/img1/img202201271644375.jpg" data-caption="">
+                            <img class="mat" src="/medias/loading.svg" data-src="https://cdn.jsdelivr.net/gh/zouwen726/img1/img202201271644375.jpg" alt="img"+51 >
+                        </a>                   
+                
+                                       
+                        <a target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/zouwen726/img1/img202201271645197.jpg" data-caption="">
+                            <img class="mat" src="/medias/loading.svg" data-src="https://cdn.jsdelivr.net/gh/zouwen726/img1/img202201271645197.jpg" alt="img"+52 >
+                        </a>                   
+                
+                                       
+                        <a target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/zouwen726/img1/img202201271645581.jpg" data-caption="">
+                            <img class="mat" src="/medias/loading.svg" data-src="https://cdn.jsdelivr.net/gh/zouwen726/img1/img202201271645581.jpg" alt="img"+53 >
+                        </a>                   
+                
+                                       
+                        <a target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/zouwen726/img1/img202201271645782.jpg" data-caption="">
+                            <img class="mat" src="/medias/loading.svg" data-src="https://cdn.jsdelivr.net/gh/zouwen726/img1/img202201271645782.jpg" alt="img"+54 >
+                        </a>                   
+                
+                                       
+                        <a target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/zouwen726/img1/img202201271646048.jpg" data-caption="">
+                            <img class="mat" src="/medias/loading.svg" data-src="https://cdn.jsdelivr.net/gh/zouwen726/img1/img202201271646048.jpg" alt="img"+55 >
+                        </a>                   
+                
+            
+            </div>
         </div>
     </div>
-
-    
-</div>
+</section>
 
 <script>
-    $(function () {
-        let coverSlider = $('.carousel');
-
-        //用户触摸轮播自动 restartPlay 是否生效
-        let initUserPressedOrDraggedActive = false
-
-        //用户触摸轮播自动 restartPlay
-        function initUserPressedOrDragged(instance) {
-            setInterval(() => {
-                if (instance.pressed || instance.dragged) {
-                    // console.log('initUserPressedOrDragged: ',instance.pressed,instance.dragged)
-                    restartPlay()
-                }
-            }, 1000)
-        }
-
-        coverSlider.carousel({
-            duration: Number('120'),
-            fullWidth: true,
-            indicators: 'true' === 'true',
-            onCycleTo() {
-                if (!initUserPressedOrDraggedActive) {
-                    // console.log('initUserPressedOrDraggedActive')
-                    initUserPressedOrDragged(this)
-                    initUserPressedOrDraggedActive = true
-                }
-            },
-        })
-
-        let carouselIntervalId;
-        
-        // Loop to call the next cover article picture.
-        let autoCarousel = function () {
-            carouselIntervalId = setInterval(function () {
-                coverSlider.carousel('next');
-            }, 5000);
-        };
-        autoCarousel();
-        
-
-        function restartPlay() {
-            
-            clearInterval(carouselIntervalId);
-            autoCarousel();
-            
-        };
-
-        
-        // prev and next cover post.
-        $('#prev-cover').click(function () {
-            coverSlider.carousel('prev');
-            restartPlay();
-        });
-        $('#next-cover').click(function () {
-            coverSlider.carousel('next');
-            restartPlay();
-        });
-        
+    baguetteBox.run('.gallery', {
+        // 配置参数
+        buttons:Boolean,//是否显示导航按钮。
+        noScrollbars:true,//是否在显示时隐藏滚动条。
+        titleTag:true,//是否使用图片上的title属性作为图片标题
+        async:true,//是否异步加载文件。
     });
-</script>
 
+    start()
+        $(window).on('scroll', function(){
+         start();
+    })
 
+    function start(){
+          //.not('[data-isLoaded]')选中已加载的图片不需要重新加载
+        $('.gallery img').not('[data-isLoaded]').each(function(){
+            var $node = $(this)
+            if( isShow($node) ){
+                loadImg($node);
+            }
+        });
+     }
 
-<style>
-  /* 主页背景图 */
-  .bg-cover {
-    background-image: url("/medias/banner/wy1.JPG") !important;
-  }
-</style>
-
-<style>
-  @media only screen and (max-width: 601px) {
-    #switchspring {
-      bottom: 178px !important;
+    //判断一个元素是不是出现在窗口(视野)
+    function isShow($node){
+        return $node.offset().top <= $(window).height() + $(window).scrollTop();
     }
-  }
-
-  #switchspring {
-    bottom: 232px;
-  }
-
-  .hurens {
-    color: #926fec;
-    font-size: 1.08rem;
-  }
-
-  body.dark .hurens {
-    color: #926fec !important;
-  }
-</style>
-
-<main class="content">
-  
-  <div id="indexCard" class="index-card">
-    <div class="container ">
-      <!-- 王小波语录栏开始 -->
-      <div class="card huahuacard">
-        <div class="card-content">
-          
-          <style>
-  .yulunr {
-    text-indent: 2rem;
-  }
-</style>
-<div class="dream yuludream">
-    <div class="row">
-        <!-- 王小波语录开始 -->
-        <div class="col l12 m12 s12 text datext">
-            <!-- 福袋按钮 -->
-            <div class="caishendeng">        
-                <div class="caishenxian fudaixian">
-                    <img class="caishenpic fudai" src="/medias/spring-img/fudai.png" />
-                </div>              
-            </div>
-            <div class="title center-align">
-              《质数的孤独》
-            </div>
-            <div class="yulunr">越长大，越觉得孤独竟是生命的必然，每个人都是质数列中孤单却特别的存在。或许，说不上特别，也就算个普普通通，再或者说，用＂普通＂都夸张了些。我们都是那孤独的质数，我们都承受着质数的孤独。——保罗·乔尔达诺 《质数的孤独》</div>
-        </div>
-        <!-- 王小波语录栏结束 -->
-    </div>
-</div>
-
-          
-
-          
-
-          
-
-          
-          
-        </div>
-        <!-- 旋转樱花 -->
-        <div class="yinghua yhleft">
-          <div class="yinghualine">
-            <img class="yinghuapic" src="/medias/yinghua.png" />
-          </div>
-          <style>
-            .yinghua {
-              position: absolute;
-              bottom: 32px;
-            }
-
-            .yhleft {
-              left: 15%;
-            }
-
-            .yinghualine {
-              position: absolute;
-              top: 0px;
-              right: 20%;
-              width: 2px;
-              height: 32px;
-              background: #dc8f03;
-              transform-origin: 50% 100px;
-              animation: swing 3.5s infinite ease-in-out;
-              -webkit-transform-origin: 50% 100px;
-              -webkit-animation: swing 3.5s infinite ease-in-out;
-            }
-
-            .yinghuapic {
-              width: 28px;
-              height: 28px;
-              -webkit-animation: rotate 2s linear 0s infinite;
-              animation: rotate 2s linear 0s infinite;
-              position: absolute;
-              top: -14px;
-              left: -14px;
-              z-index: 9;
-            }
-          </style>
-        </div>
-      </div>
-      <!-- 王小波语录栏结束 -->
-
-      <!-- 全局通知公告播报栏开始 -->
-      <style>
-        .notices {
-          padding: 20px;
-          color: #969696;
-          position: relative;
-          display: inline-block;
-          border-radius: 10px;
-          font-size: 16px;
-        }
-
-        .rows .col.offset-l2 {
-          margin-left: 0px !important;
-        }
-
-        .textsst {
-          padding: 20px;
-          font-size: 1.08rem;
-          text-indent: 2rem;
-          font-family: 'Architects Daughter', cursive !important;
-        }
-
-        .textsst p {
-          font-size: 16px;
-        }
-      </style>
-      <div class="card huahuacard">
-        <div class="dream">
-          <div class="row rows">
-            <div class="notices col l12 offset-l2 m12 offset-m1 s12 offset-s1">
-              <div class="caishendeng">
-                <div class="caishenxian">
-                  <img class="caishenpic" src="/medias/spring-img/caishen.png" />
-                </div>
-              </div>
-              <!-- 全局通知公告播报栏开始 -->
-              <style>
-                .notices {
-                  padding: 20px;
-                  color: #969696;
-                  position: relative;
-                  display: inline-block;
-                  border-radius: 10px;
-                  font-size: 16px;
-                }
-
-                .rows .col.offset-l2 {
-                  margin-left: 0px !important;
-                }
-
-                .textsst {
-                  padding: 20px;
-                  font-size: 1.08rem;
-                  text-indent: 2rem;
-                  font-family: 'Architects Daughter', cursive !important;
-                }
-
-                .textsst p {
-                  font-size: 16px;
-                }
-              </style>
-              <!-- 公告文字栏开始 -->
-              <!-- <div class="textsst">
-                <p>作者：Hello，itsNeko，我是本开源博客的作者，itsNeko博客地址:<a href="https://dyfa.top/" target="_blank">itsNeko博客~</a>
-                </p>
-                <p>下载：本开源博客的源码已经上传我的github和gitee仓库，欢迎<code>Star</code>，下载地址：
-                  <a href="https://github.com/nekodeng/hexo-theme-itsneko.git" target="_blank">源码github下载地址~</a>
-                  <a href="https://gitee.com/nekodeng/hexo-theme-itsneko.git" target="_blank">源码gitee下载地址~</a>
-                </p>
-                <p>赞赏：感谢各位的喜爱，也欢迎大家的赞赏，赞赏二维码见该页面：<a href="https://dyfa.top/donate/" target="_blank">赞赏itsNeko开源博主~</a>
-                </p>
-                <p>食用：本开源博客食用方法见下面第一篇文章:<a href="https://dyfa.top/posts/itsneko-opensource-blog.html"
-                    target="_blank">关于itsNeko开源博客食用方法~</a>，尽量写的通俗易懂，若懂一点代码那便是极好的。</p>
-                <p>联系：怎样联系itsNeko，留言：<a href="https://dyfa.top/contact/" target="_blank">itsNeko留言板</a>
-                  ，邮箱：<code>nekodeng@qq.com</code>，QQ: <code>2018854221</code></p>
-              </div> -->
-              <!-- 公告文字栏结束 -->
-              <!-- 旋转樱花 -->
-              <div class="yinghua yhright">
-                <div class="yinghualine">
-                  <img class="yinghuapic" src="/medias/yinghua.png" />
-                </div>
-                <style>
-                  .yinghua {
-                    position: absolute;
-                    bottom: 32px;
-                  }
-
-                  .yhright {
-                    right: 12%;
-                  }
-
-                  .yinghualine {
-                    position: absolute;
-                    top: 0px;
-                    right: 20%;
-                    width: 2px;
-                    height: 32px;
-                    background: #dc8f03;
-                    transform-origin: 50% 100px;
-                    animation: swing 3.5s infinite ease-in-out;
-                    -webkit-transform-origin: 50% 100px;
-                    -webkit-animation: swing 3.5s infinite ease-in-out;
-                  }
-
-                  .yinghuapic {
-                    width: 28px;
-                    height: 28px;
-                    -webkit-animation: rotate 2s linear 0s infinite;
-                    animation: rotate 2s linear 0s infinite;
-                    position: absolute;
-                    top: -14px;
-                    left: -14px;
-                    z-index: 9;
-                  }
-                </style>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- 全局通知公告播报栏结束 -->
-    </div>
-  </div>
-
-  
-
-  
-
-  <!-- 所有文章卡片开始 -->
-  <article id="articles" class="container articles">
-    <div class="row article-row">
-      
-      <div class="article col s12 m6 l4">
-        <div class="card">
-          <!-- 推荐文章置顶模块效果开始 -->
-          
-          <div class="placetop">推荐文章</div>
-          <style>
-            .placetop {
-              z-index: 99;
-              position: absolute;
-              top: 0;
-              left: 0;
-              width: 80px;
-              height: 30px;
-              line-height: 30px;
-              border-bottom-right-radius: 8px;
-              background-color: #039be5;
-              text-align: center;
-              font-size: 15px;
-              color: #fff;
-              font-weight: 400 !important;
-              opacity: 0.95;
-            }
-
-            body.dark .placetop {
-              opacity: 0.75;
-            }
-          </style>
-          
-          <!-- 推荐文章置顶模块效果结束 -->
-          <a href="/posts/%E5%A4%9C%E4%B9%8B%E6%B5%81%E6%98%9F.html">
-            <div class="card-image">
-
-              
-              <img src="/medias/toc-banner/aboutme.JPG" class="responsive-img" alt="关于zouwen博客食用方法">
-              
-              <!-- 福袋按钮 -->
-              <div class="caishendeng">
-                <div class="caishenxian fudaixian">
-                  <img class="caishenpic lala" src="/medias/spring-img/fish.png" />
-                </div>
-              </div>
-              <span class="card-title">
-                关于zouwen博客食用方法
-                <!-- 文章卡片hover线条效果 -->
-                <span class="titlesline">
-                  <style>
-                    .titlesline {
-                      width: 0px;
-                      height: 4px;
-                      background-color: #fadca6;
-                      border-radius: 2px;
-                      position: absolute;
-                      top: 10px;
-                      left: 24px;
-                    }
-
-                    body.dark .titlesline {
-                      filter: brightness(.7);
-                    }
-
-                    article .card .titlesline {
-                      transition: all 0.36s ease;
-                    }
-
-                    article .card-image:hover .titlesline {
-                      width: 36px;
-                    }
-                  </style>
-                </span>
-              </span>
-            </div>
-          </a>
-
-          <div class="card-content article-content">
-            <div class="summary block-with-text">
-              
-              
-
-将下载的整个文件夹在VsCode中打开，在终端中依次执行以下命令行
-
-npm install
-hexo clean
-hexo g
-hexo s
-
-然后在浏览器中，打开“ http://localhost:4000/ ”，即可实时预览网站
-              
-            </div>
-            <div class="publish-info">
-              <span class="publish-date">
-                <i class="far fa-clock fa-fw icon-date"></i>2021-12-16
-              </span>
-              <span class="publish-author">
-                
-                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                
-                <a href="/categories/zouwen%E5%8D%9A%E5%AE%A2%E9%A3%9F%E7%94%A8%E6%96%B9%E6%B3%95/" class="post-category">
-                  zouwen博客食用方法
-                </a>
-                
-                
-              </span>
-            </div>
-          </div>
-
-          
-          <div class="card-action article-tags">
-            
-            <a href="/tags/%E5%85%B3%E4%BA%8Ezouwen%E5%8D%9A%E5%AE%A2/">
-              <span class="chip bg-color">关于zouwen博客</span>
-            </a>
-            
-          </div>
-          
-        </div>
-      </div>
-      
-      <div class="article col s12 m6 l4">
-        <div class="card">
-          <!-- 推荐文章置顶模块效果开始 -->
-          
-          <!-- 推荐文章置顶模块效果结束 -->
-          <a href="/posts/63295.html">
-            <div class="card-image">
-
-              
-              
-              <img src="/medias/featureimages/17.jpg" class="responsive-img"
-                alt="hexo seo优化">
-              
-              <!-- 福袋按钮 -->
-              <div class="caishendeng">
-                <div class="caishenxian fudaixian">
-                  <img class="caishenpic lala" src="/medias/spring-img/fish.png" />
-                </div>
-              </div>
-              <span class="card-title">
-                hexo seo优化
-                <!-- 文章卡片hover线条效果 -->
-                <span class="titlesline">
-                  <style>
-                    .titlesline {
-                      width: 0px;
-                      height: 4px;
-                      background-color: #fadca6;
-                      border-radius: 2px;
-                      position: absolute;
-                      top: 10px;
-                      left: 24px;
-                    }
-
-                    body.dark .titlesline {
-                      filter: brightness(.7);
-                    }
-
-                    article .card .titlesline {
-                      transition: all 0.36s ease;
-                    }
-
-                    article .card-image:hover .titlesline {
-                      width: 36px;
-                    }
-                  </style>
-                </span>
-              </span>
-            </div>
-          </a>
-
-          <div class="card-content article-content">
-            <div class="summary block-with-text">
-              
-              SEO优化
-搜索引擎优化，又称为 SEO，即 Search Engine Optimization，它是一种通过分析搜索引擎的排名规律，了解各种搜索引擎怎样进行搜索、怎样抓取互联网页面、怎样确定特定关键词的搜索结果排名的技术。Google 
-              
-            </div>
-            <div class="publish-info">
-              <span class="publish-date">
-                <i class="far fa-clock fa-fw icon-date"></i>2022-01-12
-              </span>
-              <span class="publish-author">
-                
-                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                
-                <a href="/categories/hexo/" class="post-category">
-                  hexo
-                </a>
-                
-                
-              </span>
-            </div>
-          </div>
-
-          
-          <div class="card-action article-tags">
-            
-            <a href="/tags/hexo/">
-              <span class="chip bg-color">hexo</span>
-            </a>
-            
-          </div>
-          
-        </div>
-      </div>
-      
-      <div class="article col s12 m6 l4">
-        <div class="card">
-          <!-- 推荐文章置顶模块效果开始 -->
-          
-          <!-- 推荐文章置顶模块效果结束 -->
-          <a href="/posts/55875.html">
-            <div class="card-image">
-
-              
-              
-              <img src="/medias/featureimages/4.jpg" class="responsive-img"
-                alt="hexo 美化">
-              
-              <!-- 福袋按钮 -->
-              <div class="caishendeng">
-                <div class="caishenxian fudaixian">
-                  <img class="caishenpic lala" src="/medias/spring-img/fish.png" />
-                </div>
-              </div>
-              <span class="card-title">
-                hexo 美化
-                <!-- 文章卡片hover线条效果 -->
-                <span class="titlesline">
-                  <style>
-                    .titlesline {
-                      width: 0px;
-                      height: 4px;
-                      background-color: #fadca6;
-                      border-radius: 2px;
-                      position: absolute;
-                      top: 10px;
-                      left: 24px;
-                    }
-
-                    body.dark .titlesline {
-                      filter: brightness(.7);
-                    }
-
-                    article .card .titlesline {
-                      transition: all 0.36s ease;
-                    }
-
-                    article .card-image:hover .titlesline {
-                      width: 36px;
-                    }
-                  </style>
-                </span>
-              </span>
-            </div>
-          </a>
-
-          <div class="card-content article-content">
-            <div class="summary block-with-text">
-              
-              新建分类 categories 页 categories 页是用来展示所有分类的页面，如果 source 目录下还没有 categories/index.md 文件，那么就需要新建一个，命令如下：      
- hexo new page 
-              
-            </div>
-            <div class="publish-info">
-              <span class="publish-date">
-                <i class="far fa-clock fa-fw icon-date"></i>2022-01-12
-              </span>
-              <span class="publish-author">
-                
-                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                
-                <a href="/categories/hexo/" class="post-category">
-                  hexo
-                </a>
-                
-                
-              </span>
-            </div>
-          </div>
-
-          
-          <div class="card-action article-tags">
-            
-            <a href="/tags/hexo/">
-              <span class="chip bg-color">hexo</span>
-            </a>
-            
-          </div>
-          
-        </div>
-      </div>
-      
-      <div class="article col s12 m6 l4">
-        <div class="card">
-          <!-- 推荐文章置顶模块效果开始 -->
-          
-          <!-- 推荐文章置顶模块效果结束 -->
-          <a href="/posts/29157.html">
-            <div class="card-image">
-
-              
-              
-              <img src="/medias/featureimages/0.jpg" class="responsive-img"
-                alt="Hexo 安装">
-              
-              <!-- 福袋按钮 -->
-              <div class="caishendeng">
-                <div class="caishenxian fudaixian">
-                  <img class="caishenpic lala" src="/medias/spring-img/fish.png" />
-                </div>
-              </div>
-              <span class="card-title">
-                Hexo 安装
-                <!-- 文章卡片hover线条效果 -->
-                <span class="titlesline">
-                  <style>
-                    .titlesline {
-                      width: 0px;
-                      height: 4px;
-                      background-color: #fadca6;
-                      border-radius: 2px;
-                      position: absolute;
-                      top: 10px;
-                      left: 24px;
-                    }
-
-                    body.dark .titlesline {
-                      filter: brightness(.7);
-                    }
-
-                    article .card .titlesline {
-                      transition: all 0.36s ease;
-                    }
-
-                    article .card-image:hover .titlesline {
-                      width: 36px;
-                    }
-                  </style>
-                </span>
-              </span>
-            </div>
-          </a>
-
-          <div class="card-content article-content">
-            <div class="summary block-with-text">
-              
-              安装Node.js安装Node.js官方地址  https://nodejs.org/en/ 
-验证安装完成后，要查看我们是否安装成功，可以打开命令提示符（Win + R）   
-输入 cmd 打开控制台，输入如下命令，如果出现对应版本号，
-              
-            </div>
-            <div class="publish-info">
-              <span class="publish-date">
-                <i class="far fa-clock fa-fw icon-date"></i>2022-01-12
-              </span>
-              <span class="publish-author">
-                
-                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                
-                <a href="/categories/hexo/" class="post-category">
-                  hexo
-                </a>
-                
-                
-              </span>
-            </div>
-          </div>
-
-          
-          <div class="card-action article-tags">
-            
-            <a href="/tags/hexo/">
-              <span class="chip bg-color">hexo</span>
-            </a>
-            
-          </div>
-          
-        </div>
-      </div>
-      
-      <div class="article col s12 m6 l4">
-        <div class="card">
-          <!-- 推荐文章置顶模块效果开始 -->
-          
-          <!-- 推荐文章置顶模块效果结束 -->
-          <a href="/posts/45428.html">
-            <div class="card-image">
-
-              
-              
-              <img src="/medias/featureimages/10.jpg" class="responsive-img"
-                alt="什么是懒加载什么是预加载">
-              
-              <!-- 福袋按钮 -->
-              <div class="caishendeng">
-                <div class="caishenxian fudaixian">
-                  <img class="caishenpic lala" src="/medias/spring-img/fish.png" />
-                </div>
-              </div>
-              <span class="card-title">
-                什么是懒加载什么是预加载
-                <!-- 文章卡片hover线条效果 -->
-                <span class="titlesline">
-                  <style>
-                    .titlesline {
-                      width: 0px;
-                      height: 4px;
-                      background-color: #fadca6;
-                      border-radius: 2px;
-                      position: absolute;
-                      top: 10px;
-                      left: 24px;
-                    }
-
-                    body.dark .titlesline {
-                      filter: brightness(.7);
-                    }
-
-                    article .card .titlesline {
-                      transition: all 0.36s ease;
-                    }
-
-                    article .card-image:hover .titlesline {
-                      width: 36px;
-                    }
-                  </style>
-                </span>
-              </span>
-            </div>
-          </a>
-
-          <div class="card-content article-content">
-            <div class="summary block-with-text">
-              
-              什么是懒加载懒加载
-延迟加载图片，达到加载条件时再加载。比如电商网站，鼠标没滑到下面内容，下面内容图片就不会加载出来。滑动到哪个位置，哪个位置图片再加载。   
-原理：img的src属性初始不放置实际需要的链接，而是存在data-url属性
-              
-            </div>
-            <div class="publish-info">
-              <span class="publish-date">
-                <i class="far fa-clock fa-fw icon-date"></i>2022-01-11
-              </span>
-              <span class="publish-author">
-                
-                <i class="fas fa-user fa-fw"></i>
-                zouwen
-                
-              </span>
-            </div>
-          </div>
-
-          
-          <div class="card-action article-tags">
-            
-            <a href="/tags/%E5%8A%A0%E8%BD%BD/">
-              <span class="chip bg-color">加载</span>
-            </a>
-            
-          </div>
-          
-        </div>
-      </div>
-      
-      <div class="article col s12 m6 l4">
-        <div class="card">
-          <!-- 推荐文章置顶模块效果开始 -->
-          
-          <!-- 推荐文章置顶模块效果结束 -->
-          <a href="/posts/875.html">
-            <div class="card-image">
-
-              
-              
-              <img src="/medias/featureimages/2.jpg" class="responsive-img"
-                alt="什么是CDN">
-              
-              <!-- 福袋按钮 -->
-              <div class="caishendeng">
-                <div class="caishenxian fudaixian">
-                  <img class="caishenpic lala" src="/medias/spring-img/fish.png" />
-                </div>
-              </div>
-              <span class="card-title">
-                什么是CDN
-                <!-- 文章卡片hover线条效果 -->
-                <span class="titlesline">
-                  <style>
-                    .titlesline {
-                      width: 0px;
-                      height: 4px;
-                      background-color: #fadca6;
-                      border-radius: 2px;
-                      position: absolute;
-                      top: 10px;
-                      left: 24px;
-                    }
-
-                    body.dark .titlesline {
-                      filter: brightness(.7);
-                    }
-
-                    article .card .titlesline {
-                      transition: all 0.36s ease;
-                    }
-
-                    article .card-image:hover .titlesline {
-                      width: 36px;
-                    }
-                  </style>
-                </span>
-              </span>
-            </div>
-          </a>
-
-          <div class="card-content article-content">
-            <div class="summary block-with-text">
-              
-              什么是CDN什么是CDNCDN的全称是Content Delivery Network，即内容分发网络；使用户可就近取得所需内容，解决Internet网络拥挤的状况，提高用户访问网站的响应速度。
-简单阐述CDN这个技术其实说起来并不复杂，最
-              
-            </div>
-            <div class="publish-info">
-              <span class="publish-date">
-                <i class="far fa-clock fa-fw icon-date"></i>2022-01-11
-              </span>
-              <span class="publish-author">
-                
-                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                
-                <a href="/categories/CDN/" class="post-category">
-                  CDN
-                </a>
-                
-                
-              </span>
-            </div>
-          </div>
-
-          
-          <div class="card-action article-tags">
-            
-            <a href="/tags/CDN/">
-              <span class="chip bg-color">CDN</span>
-            </a>
-            
-          </div>
-          
-        </div>
-      </div>
-      
-      <div class="article col s12 m6 l4">
-        <div class="card">
-          <!-- 推荐文章置顶模块效果开始 -->
-          
-          <!-- 推荐文章置顶模块效果结束 -->
-          <a href="/posts/23825.html">
-            <div class="card-image">
-
-              
-              
-              <img src="/medias/featureimages/7.jpg" class="responsive-img"
-                alt="markdown">
-              
-              <!-- 福袋按钮 -->
-              <div class="caishendeng">
-                <div class="caishenxian fudaixian">
-                  <img class="caishenpic lala" src="/medias/spring-img/fish.png" />
-                </div>
-              </div>
-              <span class="card-title">
-                markdown
-                <!-- 文章卡片hover线条效果 -->
-                <span class="titlesline">
-                  <style>
-                    .titlesline {
-                      width: 0px;
-                      height: 4px;
-                      background-color: #fadca6;
-                      border-radius: 2px;
-                      position: absolute;
-                      top: 10px;
-                      left: 24px;
-                    }
-
-                    body.dark .titlesline {
-                      filter: brightness(.7);
-                    }
-
-                    article .card .titlesline {
-                      transition: all 0.36s ease;
-                    }
-
-                    article .card-image:hover .titlesline {
-                      width: 36px;
-                    }
-                  </style>
-                </span>
-              </span>
-            </div>
-          </a>
-
-          <div class="card-content article-content">
-            <div class="summary block-with-text">
-              
-              Markdown简介Markdown 是一种轻量级标记语言，它允许人们使用易读易写的纯文本格式编写文档。 由约翰·格鲁2004伯创建，Markdown 编写的文档可以导出 HTML 、Word、图像、PDF、Epub 等多种格式的文档，Ma
-              
-            </div>
-            <div class="publish-info">
-              <span class="publish-date">
-                <i class="far fa-clock fa-fw icon-date"></i>2022-01-07
-              </span>
-              <span class="publish-author">
-                
-                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                
-                <a href="/categories/markdown/" class="post-category">
-                  markdown
-                </a>
-                
-                
-              </span>
-            </div>
-          </div>
-
-          
-          <div class="card-action article-tags">
-            
-            <a href="/tags/Markdown/">
-              <span class="chip bg-color">Markdown</span>
-            </a>
-            
-          </div>
-          
-        </div>
-      </div>
-      
-      <div class="article col s12 m6 l4">
-        <div class="card">
-          <!-- 推荐文章置顶模块效果开始 -->
-          
-          <!-- 推荐文章置顶模块效果结束 -->
-          <a href="/posts/articletemplate.html">
-            <div class="card-image">
-
-              
-              <img src="/medias/toc-banner/suibi1.jpg" class="responsive-img" alt="这是技术文章模板">
-              
-              <!-- 福袋按钮 -->
-              <div class="caishendeng">
-                <div class="caishenxian fudaixian">
-                  <img class="caishenpic lala" src="/medias/spring-img/fish.png" />
-                </div>
-              </div>
-              <span class="card-title">
-                这是技术文章模板
-                <!-- 文章卡片hover线条效果 -->
-                <span class="titlesline">
-                  <style>
-                    .titlesline {
-                      width: 0px;
-                      height: 4px;
-                      background-color: #fadca6;
-                      border-radius: 2px;
-                      position: absolute;
-                      top: 10px;
-                      left: 24px;
-                    }
-
-                    body.dark .titlesline {
-                      filter: brightness(.7);
-                    }
-
-                    article .card .titlesline {
-                      transition: all 0.36s ease;
-                    }
-
-                    article .card-image:hover .titlesline {
-                      width: 36px;
-                    }
-                  </style>
-                </span>
-              </span>
-            </div>
-          </a>
-
-          <div class="card-content article-content">
-            <div class="summary block-with-text">
-              
-              前言，技术文章前言技术文章前言技术文章前言技术文章前言技术文章前言技术文章前言技术文章前言技术文章前言技术文章前言技术文章前言技术文章前言技术文章前言技术文章前言。
-
-标题
-项目1
-项目2
-项目3
-
-正文正文正文正文正文正文正文正文正文正文
-              
-            </div>
-            <div class="publish-info">
-              <span class="publish-date">
-                <i class="far fa-clock fa-fw icon-date"></i>2021-12-14
-              </span>
-              <span class="publish-author">
-                
-                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                
-                <a href="/categories/%E6%8A%80%E6%9C%AF/" class="post-category">
-                  技术
-                </a>
-                
-                
-              </span>
-            </div>
-          </div>
-
-          
-          <div class="card-action article-tags">
-            
-            <a href="/tags/%E6%8A%80%E6%9C%AF/">
-              <span class="chip bg-color">技术</span>
-            </a>
-            
-          </div>
-          
-        </div>
-      </div>
-      
-      <div class="article col s12 m6 l4">
-        <div class="card">
-          <!-- 推荐文章置顶模块效果开始 -->
-          
-          <!-- 推荐文章置顶模块效果结束 -->
-          <a href="/posts/essay-demo.html">
-            <div class="card-image">
-
-              
-              <img src="/medias/toc-banner/aticalmode.jpg" class="responsive-img" alt="这是随笔文章模板">
-              
-              <!-- 福袋按钮 -->
-              <div class="caishendeng">
-                <div class="caishenxian fudaixian">
-                  <img class="caishenpic lala" src="/medias/spring-img/fish.png" />
-                </div>
-              </div>
-              <span class="card-title">
-                这是随笔文章模板
-                <!-- 文章卡片hover线条效果 -->
-                <span class="titlesline">
-                  <style>
-                    .titlesline {
-                      width: 0px;
-                      height: 4px;
-                      background-color: #fadca6;
-                      border-radius: 2px;
-                      position: absolute;
-                      top: 10px;
-                      left: 24px;
-                    }
-
-                    body.dark .titlesline {
-                      filter: brightness(.7);
-                    }
-
-                    article .card .titlesline {
-                      transition: all 0.36s ease;
-                    }
-
-                    article .card-image:hover .titlesline {
-                      width: 36px;
-                    }
-                  </style>
-                </span>
-              </span>
-            </div>
-          </a>
-
-          <div class="card-content article-content">
-            <div class="summary block-with-text">
-              
-              这是博主的随笔板块，后续会更新文章，目前弄好了模板格式~
-    节选自《你若安好便是晴天》- 前言
-  
-  几场梅雨，几卷荷风，江南已是烟水迷离。小院里湿润的青苔在雨中纯净生长。这个季节，许多人都在打听关于莲荷的消息，以及茉莉在黄昏浮动
-              
-            </div>
-            <div class="publish-info">
-              <span class="publish-date">
-                <i class="far fa-clock fa-fw icon-date"></i>2020-01-04
-              </span>
-              <span class="publish-author">
-                
-                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                
-                <a href="/categories/%E9%9A%8F%E7%AC%94/" class="post-category">
-                  随笔
-                </a>
-                
-                
-              </span>
-            </div>
-          </div>
-
-          
-          <div class="card-action article-tags">
-            
-            <a href="/tags/%E9%9A%8F%E7%AC%94/">
-              <span class="chip bg-color">随笔</span>
-            </a>
-            
-          </div>
-          
-        </div>
-      </div>
-      
-    </div>
-  </article>
-  <!-- 所有文章卡片结束 -->
-</main>
-
-
+    //加载图片
+    function loadImg($img){
+    //.attr(值)
+    //.attr(属性名称,值)
+        $img.attr('src', $img.attr('data-src')); //把data-src的值 赋值给src
+        $img.attr('data-isLoaded', 1);//已加载的图片做标记
+    }
+</script>
 
 
     <style>
