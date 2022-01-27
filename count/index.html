@@ -129,10 +129,13 @@
 <meta name="generator" content="Hexo 5.0.2"><link rel="alternate" href="/atom.xml" title="夜之流星" type="application/atom+xml">
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
-
+<script type="text/javascript" src="http://libs.baidu.com/jquery/1.8.3/jquery.js"></script>
+<script type="text/javascript" src="\js\xuehuapiaoluo.js"></script>
 <!-- 提示：若要开启春节或者圣诞主题样式，直接给body标签添加一个class为
 class="themespring" -->
 <body>
+    <script type="text/javascript" src="http://libs.baidu.com/jquery/1.8.3/jquery.min.js"></script>
+    <script type="text/javascript" src="\js\xuehuapiaoluo.js"></script>
     <!-- 网站全局深色模式设置开始 -->
     <script>
         if (localStorage.getItem('dark') === '1') {
@@ -1304,7 +1307,7 @@ class="themespring" -->
                 type: 'pie',
                 radius: '50%',
                 color: ['#6772e5', '#ff9e0f', '#fa755a', '#3ecf8e', '#82d3f4', '#ab47bc', '#525f7f', '#f51c47', '#26A69A'],
-                data: [{"name":"hexo","value":3},{"name":"markdown","value":1},{"name":"CDN","value":1},{"name":"zouwen博客食用方法","value":1},{"name":"技术","value":1},{"name":"随笔","value":1}],
+                data: [{"name":"hexo","value":3},{"name":"markdown","value":1},{"name":"CDN","value":1},{"name":"zouwen博客食用方法","value":1},{"name":"随笔","value":1},{"name":"技术","value":1}],
                 itemStyle: {
                     emphasis: {
                         shadowBlur: 10,
@@ -1328,7 +1331,7 @@ class="themespring" -->
         xAxis: [
             {
                 type: 'category',
-                data: ["hexo","Markdown","CDN","加载","关于zouwen博客","技术","随笔"]
+                data: ["hexo","Markdown","CDN","加载","关于zouwen博客","随笔","技术"]
             }
         ],
         yAxis: [
@@ -1704,6 +1707,11 @@ $(function () {
     
 
     
+    <script type="text/javascript" color="15,157,88"
+        pointColor="142,206,149" opacity='0.1'
+        zIndex="-1" count="0"
+        src="/libs/background/canvas-nest.js"></script>
+    
 
     
 
@@ -1716,7 +1724,7 @@ $(function () {
     
 
     <!--动态线条背景-->
-    <script type="text/javascript" color="122 103 158" opacity='0.12' zIndex="-2" count="100" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js">
+    <!-- <script type="text/javascript" color="122 103 158" opacity='0.12' zIndex="-2" count="100" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js">
     </script>
  
     <script type="text/javascript" src="/js/click_show_text.js"></script>
@@ -1727,8 +1735,8 @@ $(function () {
         POWERMODE.colorful = true; // make power mode colorful
         POWERMODE.shake = false; // turn off shake
         document.body.addEventListener('input', POWERMODE);
-    </script>
-
+    </script> -->
+  
     <!-- 百度统计代码 -->
     <script>
         var _hmt = _hmt || [];
