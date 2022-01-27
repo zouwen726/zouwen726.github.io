@@ -127,7 +127,7 @@
         })();
     </script>
 <meta name="generator" content="Hexo 5.0.2"><link rel="alternate" href="/atom.xml" title="夜之流星" type="application/atom+xml">
-</head>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
 <!-- 提示：若要开启春节或者圣诞主题样式，直接给body标签添加一个class为
@@ -1343,14 +1343,14 @@ h3:hover {
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    764
+                    741
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    3 分
+                    2 分
                 </div>
                 
 
@@ -1387,7 +1387,9 @@ h3:hover {
 </blockquote>
 <p>上面<code>user.name</code>和<code>user.mail</code>替换自己的即可    </p>
 <h3 id="配置密钥"><a href="#配置密钥" class="headerlink" title="配置密钥"></a>配置密钥</h3><p>作用：用于连接GitHub上传博客   </p>
-<p>首先在本地生成 ssh 密钥文件，输入如下命令后直接三次回车即可<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh-keygen -t rsa -C <span class="hljs-string">&quot;2535685121@qq.com&quot;</span>    <br></code></pre></td></tr></table></figure></p>
+<p>首先在本地生成 ssh 密钥文件，输入如下命令后直接三次回车即可</p>
+<pre class=" language-lang-bash"><code class="language-lang-bash">    ssh-keygen -t rsa -C "2535685121@qq.com"
+</code></pre>
 <ul>
 <li><p>一般执行上述命令之后，会生成 <code>id_rsa</code> 和 <code>id_rsa.pub</code>两个文件，前者是我们私有的，而后者则是对外开放的   </p>
 </li>
@@ -1398,7 +1400,21 @@ h3:hover {
 <p><img src="https://raw.githubusercontent.com/zouwen726/img/main/img202201121407210.png" alt><br>2.在里面输入<code>type id_rsa.pub</code> 然后就能看到密钥，复制密钥   </p>
 </li>
 </ul>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs html">type id_rsa.pub <br>```   <br><br> ![](https://raw.githubusercontent.com/zouwen726/img/main/img202201121408917.png)<br>   <br><br>*  打开你的github主页，进入个人设置 -&gt; SSH and GPG keys -&gt; New SSH key:    <br><br><br>* 将刚复制的内容粘贴到key那里，title随便填，保存        <br><br><br>![](https://raw.githubusercontent.com/zouwen726/img/main/img202201121412690.png)    <br><br>* 输入ssh -T git@github.com，如果如下图所示，出现你的用户名，那就成功了。     <br><br><br>```bash<br> ssh -T git@github.com       <br></code></pre></td></tr></table></figure>
+<pre class=" language-lang-html"><code class="language-lang-html">type id_rsa.pub
+</code></pre>
+<p> <img src="https://raw.githubusercontent.com/zouwen726/img/main/img202201121408917.png" alt></p>
+<ul>
+<li>打开你的github主页，进入个人设置 -&gt; SSH and GPG keys -&gt; New SSH key:    </li>
+</ul>
+<ul>
+<li>将刚复制的内容粘贴到key那里，title随便填，保存        </li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/zouwen726/img/main/img202201121412690.png" alt>    </p>
+<ul>
+<li>输入ssh -T git@github.com，如果如下图所示，出现你的用户名，那就成功了。     </li>
+</ul>
+<pre class=" language-lang-bash"><code class="language-lang-bash"> ssh -T git@github.com
+</code></pre>
 <blockquote>
 <p>如果提示Are you sure you want to continue connecting (yes/no)?，输入yes，<br>看到这个信息说明SSH已配置成功！   </p>
 </blockquote>
@@ -1409,8 +1425,23 @@ h3:hover {
 <ul>
 <li>定位到该目录下，输入npm i hexo-cli -g安装      </li>
 </ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs bash">npm i hexo-cli -g   <br>```   <br><br>* Hexo安装完后输入hexo -v验证是否安装成功     <br><br>```html   <br>hexo -v<br>```     <br><span class="hljs-comment">### 初始化博客 </span><br>初始化博客<br>```html <br>hexo init<br></code></pre></td></tr></table></figure>
-<p>然后生成静态博客文件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs htnl">hexo g<br></code></pre></td></tr></table></figure><br>本地预览博客<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs html">hexo s   <br></code></pre></td></tr></table></figure><br>在浏览器中输入 <a target="_blank" rel="noopener" href="http://localhost:4000">http://localhost:4000</a>   </p>
+<pre class=" language-lang-bash"><code class="language-lang-bash">npm i hexo-cli -g
+</code></pre>
+<ul>
+<li>Hexo安装完后输入hexo -v验证是否安装成功     </li>
+</ul>
+<pre class=" language-lang-html"><code class="language-lang-html">hexo -v
+</code></pre>
+<h3 id="初始化博客"><a href="#初始化博客" class="headerlink" title="初始化博客"></a>初始化博客</h3><p>初始化博客</p>
+<pre class=" language-lang-html"><code class="language-lang-html">hexo init
+</code></pre>
+<p>然后生成静态博客文件  </p>
+<pre class=" language-lang-htnl"><code class="language-lang-htnl">hexo g
+</code></pre>
+<p>本地预览博客</p>
+<pre class=" language-lang-html"><code class="language-lang-html">hexo s
+</code></pre>
+<p>在浏览器中输入 <a target="_blank" rel="noopener" href="http://localhost:4000">http://localhost:4000</a>   </p>
 <p>如果出现以下画面就说明成功了！   </p>
 <h3 id="修改博客配置"><a href="#修改博客配置" class="headerlink" title="修改博客配置"></a>修改博客配置</h3><ul>
 <li><p>本地博客测试成功后，就是上传到 GitHub 进行部署，使其能够在网络上访问   </p>
@@ -1418,7 +1449,22 @@ h3:hover {
 <li><p>安装 hexo-deployer-git      </p>
 </li>
 </ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs bash">hexo-deployer-git<br>```   <br><br>* 打开博客根目录下的_config.yml文件，这是博客的配置文件，在这里你可以修改与博客相关的各种信息。   <br><br>*  修改最后一行的配置：  <br><br>```html<br>  deploy:<br>  <span class="hljs-built_in">type</span>: git<br>  repository: https://zouwen726.github.io<br>  branch: main    <br>```    <br><br>   <br><span class="hljs-comment">## 最后   </span><br>推送到github   <br>```bash<br>hexo d <br></code></pre></td></tr></table></figure>
+<pre class=" language-lang-bash"><code class="language-lang-bash">hexo-deployer-git
+</code></pre>
+<ul>
+<li><p>打开博客根目录下的_config.yml文件，这是博客的配置文件，在这里你可以修改与博客相关的各种信息。   </p>
+</li>
+<li><p>修改最后一行的配置：  </p>
+</li>
+</ul>
+<pre class=" language-lang-html"><code class="language-lang-html">  deploy:
+  type: git
+  repository: https://zouwen726.github.io
+  branch: main
+</code></pre>
+<h2 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h2><p>推送到github   </p>
+<pre class=" language-lang-bash"><code class="language-lang-bash">hexo d
+</code></pre>
 
             </div>
             <hr/>
@@ -2043,7 +2089,7 @@ h3:hover {
                     <div class="summary block-with-text">
                         
                             新建分类 categories 页 categories 页是用来展示所有分类的页面，如果 source 目录下还没有 categories/index.md 文件，那么就需要新建一个，命令如下：      
-123456789101112
+ hexo new page 
                         
                     </div>
                     <div class="publish-info">
@@ -2358,7 +2404,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 
       
       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;Total number of words: &nbsp;<span
-        class="white-color">7.3k</span>&nbsp;
+        class="white-color">8.7k</span>&nbsp;
       
       
       

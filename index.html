@@ -127,7 +127,7 @@
         })();
     </script>
 <meta name="generator" content="Hexo 5.0.2"><link rel="alternate" href="/atom.xml" title="夜之流星" type="application/atom+xml">
-</head>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
 <!-- 提示：若要开启春节或者圣诞主题样式，直接给body标签添加一个class为
@@ -1448,6 +1448,123 @@ class="themespring" -->
         <div class="card">
           <!-- 推荐文章置顶模块效果开始 -->
           
+          <div class="placetop">推荐文章</div>
+          <style>
+            .placetop {
+              z-index: 99;
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 80px;
+              height: 30px;
+              line-height: 30px;
+              border-bottom-right-radius: 8px;
+              background-color: #039be5;
+              text-align: center;
+              font-size: 15px;
+              color: #fff;
+              font-weight: 400 !important;
+              opacity: 0.95;
+            }
+
+            body.dark .placetop {
+              opacity: 0.75;
+            }
+          </style>
+          
+          <!-- 推荐文章置顶模块效果结束 -->
+          <a href="/posts/%E5%A4%9C%E4%B9%8B%E6%B5%81%E6%98%9F.html">
+            <div class="card-image">
+
+              
+              <img src="/medias/toc-banner/aboutme.JPG" class="responsive-img" alt="关于zouwen博客食用方法">
+              
+              <!-- 福袋按钮 -->
+              <div class="caishendeng">
+                <div class="caishenxian fudaixian">
+                  <img class="caishenpic lala" src="/medias/spring-img/fish.png" />
+                </div>
+              </div>
+              <span class="card-title">
+                关于zouwen博客食用方法
+                <!-- 文章卡片hover线条效果 -->
+                <span class="titlesline">
+                  <style>
+                    .titlesline {
+                      width: 0px;
+                      height: 4px;
+                      background-color: #fadca6;
+                      border-radius: 2px;
+                      position: absolute;
+                      top: 10px;
+                      left: 24px;
+                    }
+
+                    body.dark .titlesline {
+                      filter: brightness(.7);
+                    }
+
+                    article .card .titlesline {
+                      transition: all 0.36s ease;
+                    }
+
+                    article .card-image:hover .titlesline {
+                      width: 36px;
+                    }
+                  </style>
+                </span>
+              </span>
+            </div>
+          </a>
+
+          <div class="card-content article-content">
+            <div class="summary block-with-text">
+              
+              
+
+将下载的整个文件夹在VsCode中打开，在终端中依次执行以下命令行
+
+npm install
+hexo clean
+hexo g
+hexo s
+
+然后在浏览器中，打开“ http://localhost:4000/ ”，即可实时预览网站
+              
+            </div>
+            <div class="publish-info">
+              <span class="publish-date">
+                <i class="far fa-clock fa-fw icon-date"></i>2021-12-16
+              </span>
+              <span class="publish-author">
+                
+                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                
+                <a href="/categories/zouwen%E5%8D%9A%E5%AE%A2%E9%A3%9F%E7%94%A8%E6%96%B9%E6%B3%95/" class="post-category">
+                  zouwen博客食用方法
+                </a>
+                
+                
+              </span>
+            </div>
+          </div>
+
+          
+          <div class="card-action article-tags">
+            
+            <a href="/tags/%E5%85%B3%E4%BA%8Ezouwen%E5%8D%9A%E5%AE%A2/">
+              <span class="chip bg-color">关于zouwen博客</span>
+            </a>
+            
+          </div>
+          
+        </div>
+      </div>
+      
+      <div class="article col s12 m6 l4">
+        <div class="card">
+          <!-- 推荐文章置顶模块效果开始 -->
+          
           <!-- 推荐文章置顶模块效果结束 -->
           <a href="/posts/63295.html">
             <div class="card-image">
@@ -1586,7 +1703,7 @@ class="themespring" -->
             <div class="summary block-with-text">
               
               新建分类 categories 页 categories 页是用来展示所有分类的页面，如果 source 目录下还没有 categories/index.md 文件，那么就需要新建一个，命令如下：      
-123456789101112
+ hexo new page 
               
             </div>
             <div class="publish-info">
@@ -1967,114 +2084,6 @@ class="themespring" -->
         <div class="card">
           <!-- 推荐文章置顶模块效果开始 -->
           
-          <div class="placetop">推荐文章</div>
-          <style>
-            .placetop {
-              z-index: 99;
-              position: absolute;
-              top: 0;
-              left: 0;
-              width: 80px;
-              height: 30px;
-              line-height: 30px;
-              border-bottom-right-radius: 8px;
-              background-color: #039be5;
-              text-align: center;
-              font-size: 15px;
-              color: #fff;
-              font-weight: 400 !important;
-              opacity: 0.95;
-            }
-
-            body.dark .placetop {
-              opacity: 0.75;
-            }
-          </style>
-          
-          <!-- 推荐文章置顶模块效果结束 -->
-          <a href="/posts/%E5%A4%9C%E4%B9%8B%E6%B5%81%E6%98%9F.html">
-            <div class="card-image">
-
-              
-              <img src="/medias/toc-banner/aboutme.JPG" class="responsive-img" alt="关于zouwen博客食用方法">
-              
-              <!-- 福袋按钮 -->
-              <div class="caishendeng">
-                <div class="caishenxian fudaixian">
-                  <img class="caishenpic lala" src="/medias/spring-img/fish.png" />
-                </div>
-              </div>
-              <span class="card-title">
-                关于zouwen博客食用方法
-                <!-- 文章卡片hover线条效果 -->
-                <span class="titlesline">
-                  <style>
-                    .titlesline {
-                      width: 0px;
-                      height: 4px;
-                      background-color: #fadca6;
-                      border-radius: 2px;
-                      position: absolute;
-                      top: 10px;
-                      left: 24px;
-                    }
-
-                    body.dark .titlesline {
-                      filter: brightness(.7);
-                    }
-
-                    article .card .titlesline {
-                      transition: all 0.36s ease;
-                    }
-
-                    article .card-image:hover .titlesline {
-                      width: 36px;
-                    }
-                  </style>
-                </span>
-              </span>
-            </div>
-          </a>
-
-          <div class="card-content article-content">
-            <div class="summary block-with-text">
-              
-              
-              
-            </div>
-            <div class="publish-info">
-              <span class="publish-date">
-                <i class="far fa-clock fa-fw icon-date"></i>2021-12-16
-              </span>
-              <span class="publish-author">
-                
-                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                
-                <a href="/categories/zouwen%E5%8D%9A%E5%AE%A2%E9%A3%9F%E7%94%A8%E6%96%B9%E6%B3%95/" class="post-category">
-                  zouwen博客食用方法
-                </a>
-                
-                
-              </span>
-            </div>
-          </div>
-
-          
-          <div class="card-action article-tags">
-            
-            <a href="/tags/%E5%85%B3%E4%BA%8Ezouwen%E5%8D%9A%E5%AE%A2/">
-              <span class="chip bg-color">关于zouwen博客</span>
-            </a>
-            
-          </div>
-          
-        </div>
-      </div>
-      
-      <div class="article col s12 m6 l4">
-        <div class="card">
-          <!-- 推荐文章置顶模块效果开始 -->
-          
           <!-- 推荐文章置顶模块效果结束 -->
           <a href="/posts/articletemplate.html">
             <div class="card-image">
@@ -2342,7 +2351,7 @@ class="themespring" -->
 
       
       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;Total number of words: &nbsp;<span
-        class="white-color">7.3k</span>&nbsp;
+        class="white-color">8.7k</span>&nbsp;
       
       
       
