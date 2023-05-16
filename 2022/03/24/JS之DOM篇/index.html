@@ -1,0 +1,285 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>JS之DOM篇 | zouwen</title><meta name="keywords" content="JS"><meta name="author" content="zouwen"><meta name="copyright" content="zouwen"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#fff"><meta name="description" content="元素获取元素标签,属性,文本,注释getElementById()根据id获取元素getElementByTagName()根据标签名获取元素getElementByClassName()根据类名获取元素querySelector()制定选择器获取body元素document.body获取html元素document.documentElement 操作元素innertText标签里面的文字内容,">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JS之DOM篇">
+<meta property="og:url" content="http://example.com/2022/03/24/JS%E4%B9%8BDOM%E7%AF%87/index.html">
+<meta property="og:site_name" content="zouwen">
+<meta property="og:description" content="元素获取元素标签,属性,文本,注释getElementById()根据id获取元素getElementByTagName()根据标签名获取元素getElementByClassName()根据类名获取元素querySelector()制定选择器获取body元素document.body获取html元素document.documentElement 操作元素innertText标签里面的文字内容,">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/img/35.jpg">
+<meta property="article:published_time" content="2022-03-24T13:26:04.000Z">
+<meta property="article:modified_time" content="2023-04-28T09:08:51.775Z">
+<meta property="article:author" content="zouwen">
+<meta property="article:tag" content="JS">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/img/35.jpg"><link rel="shortcut icon" href="/img/aaa.png"><link rel="canonical" href="http://example.com/2022/03/24/JS%E4%B9%8BDOM%E7%AF%87/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#1f1f1f","position":"bottom-left"},
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'JS之DOM篇',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-04-28 17:08:51'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><link rel="stylesheet" href="APlayer.min.css"><div id="aplayer"></div><script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js" async></script><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#fff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+          const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+          const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+          const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+          if (t === undefined) {
+            if (isLightMode) activateLightMode()
+            else if (isDarkMode) activateDarkMode()
+            else if (isNotSpecified || hasNoSupport) {
+              const now = new Date()
+              const hour = now.getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/font.css"><link rel="stylesheet" href="/css/custom.css"><link rel="stylesheet" href="/css/font/font.css"><!-- hexo injector head_end start --><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/assets/font-awesome-animation.min.css" media="defer" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/tag_plugins.css" media="defer" onload="this.media='all'"><script src="https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/assets/carousel-touch.js"></script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="zouwen" type="application/atom+xml">
+</head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/logo3.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">69</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">27</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">13</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/linuxhome/"><i class="fa-fw fas fa-heart"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/navi/"><i class="fa-fw fas fa-search fa-fw"></i><span> 导航</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/music/"><i class="fa-fw fa-fw fas fa-music"></i><span> 音乐</span></a></div><div class="menus_item"><a class="site-page" href="/Gallery/"><i class="fa-fw fa-fw fa fa-images"></i><span> 相册</span></a></div><div class="menus_item"><a class="site-page" href="/newyear/"><i class="fa-fw fa fa-paper-plane"></i><span> 时钟</span></a></div><div class="menus_item"><a class="site-page" href="/tx/"><i class="fa-fw fa fa-paper-plane"></i><span> 愉悦</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/35.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">zouwen</a><div id="he-plugin-simple">
+</div></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/linuxhome/"><i class="fa-fw fas fa-heart"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/navi/"><i class="fa-fw fas fa-search fa-fw"></i><span> 导航</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/music/"><i class="fa-fw fa-fw fas fa-music"></i><span> 音乐</span></a></div><div class="menus_item"><a class="site-page" href="/Gallery/"><i class="fa-fw fa-fw fa fa-images"></i><span> 相册</span></a></div><div class="menus_item"><a class="site-page" href="/newyear/"><i class="fa-fw fa fa-paper-plane"></i><span> 时钟</span></a></div><div class="menus_item"><a class="site-page" href="/tx/"><i class="fa-fw fa fa-paper-plane"></i><span> 愉悦</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">JS之DOM篇</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-03-24T13:26:04.000Z" title="发表于 2022-03-24 21:26:04">2022-03-24</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-04-28T09:08:51.775Z" title="更新于 2023-04-28 17:08:51">2023-04-28</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="JS之DOM篇"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h3 id="元素"><a href="#元素" class="headerlink" title="元素"></a>元素</h3><h4 id="获取元素"><a href="#获取元素" class="headerlink" title="获取元素"></a>获取元素</h4><p>标签,属性,文本,注释<br>getElementById()根据id获取元素<br>getElementByTagName()根据标签名获取元素<br>getElementByClassName()根据类名获取元素<br>querySelector()制定选择器<br>获取body元素<br>document.body<br>获取html元素<br>document.documentElement</p>
+<h4 id="操作元素"><a href="#操作元素" class="headerlink" title="操作元素"></a>操作元素</h4><p>innertText标签里面的文字内容,去除空格和换行<br>innerHTML包括html标签,保留空格和换行<br>src<br>href<br>id , alt , title</p>
+<h4 id="表单元素的属性操作"><a href="#表单元素的属性操作" class="headerlink" title="表单元素的属性操作"></a>表单元素的属性操作</h4><p>type, value, checked, selected, disabled<br>className修改css样式<br>this.className = “change”</p>
+<h4 id="排他思想"><a href="#排他思想" class="headerlink" title="排他思想"></a>排他思想</h4><h4 id="自定义属性"><a href="#自定义属性" class="headerlink" title="自定义属性"></a>自定义属性</h4><p>element.属性<br>element.getAttribute(“属性名”)<br>自定义属性index=”1”<br>element.getAttribute(“属性名”)<br>设置属性值<br>element.属性=”值”<br>div.id=”test”<br>element.setAttribute(“属性”,”值”)</p>
+<h4 id="H5自定义属性"><a href="#H5自定义属性" class="headerlink" title="H5自定义属性"></a>H5自定义属性</h4><p>data-index=”1 “</p>
+<h3 id="节点操作"><a href="#节点操作" class="headerlink" title="节点操作"></a>节点操作</h3><p>节点包括元素节点,文本节点(空格,换行),属性节点,注释节点,所有html元素(节点)均可以被创建,修改,删除</p>
+<h4 id="父子级"><a href="#父子级" class="headerlink" title="父子级"></a>父子级</h4><p>node.parentNode</p>
+<h4 id="子节点"><a href="#子节点" class="headerlink" title="子节点"></a>子节点</h4><p>parentNoe.children 返回所有子元素节点<br>parentNode.firstElementChild 第一个元素节点<br>parentNode.firstElementChild 最后一个元素节点<br>parentNode.childNodes 所有的子节点,包含元素节点,文本节点<br>parentNode.firstChild 第一个子节点包含文本节点<br>parentNode.lastChild 最后一个子节点包含文本节点</p>
+<h4 id="兄弟节点"><a href="#兄弟节点" class="headerlink" title="兄弟节点"></a>兄弟节点</h4><p>node.previousElementSibling上一个元素兄弟<br>node.nextElementSibling下一个元素兄弟<br>node.previousSibling上一个兄弟,包含文本节点<br>node.nextSibling下一个兄弟,包含文本节点</p>
+<h4 id="创建节点"><a href="#创建节点" class="headerlink" title="创建节点"></a>创建节点</h4><p>node.creatElement(child) node为父级,child为子级</p>
+<h4 id="添加节点"><a href="#添加节点" class="headerlink" title="添加节点"></a>添加节点</h4><p>node.appendChild(child)添加到父节点末尾<br>node.insertBefore(child)添加到父节点前面</p>
+<h4 id="删除节点"><a href="#删除节点" class="headerlink" title="删除节点"></a>删除节点</h4><p>node.removeChild(child)<br>阻止链接跳转javascript:;</p>
+<h4 id="复制节点"><a href="#复制节点" class="headerlink" title="复制节点"></a>复制节点</h4><p>node.cloneNode()</p>
+<h3 id="DOM重点核心"><a href="#DOM重点核心" class="headerlink" title="DOM重点核心"></a>DOM重点核心</h3><p>文档对象模型(Document Object Model)<br>通过dom获取过来的是一个对象,所以称为文档对象模型<br>主要有创建,增,删,改,查,属性操作,事件操作</p>
+<h4 id="创建"><a href="#创建" class="headerlink" title="创建"></a>创建</h4><p>1.document.weite<br>2.innerHTML<br>3.createElement</p>
+<h4 id="删"><a href="#删" class="headerlink" title="删"></a>删</h4><p>1.removeChild</p>
+<h4 id="改"><a href="#改" class="headerlink" title="改"></a>改</h4><p>1.修改元素属性:src,href,title<br>2.修改普通元素内容:innerHTML,innerText<br>3.修改表单元素:value,type,disable<br>4.修改元素样式:style,className</p>
+<h4 id="查"><a href="#查" class="headerlink" title="查"></a>查</h4><p>1.dom提供的API方法:getElementById,getElementByTagName古老用法不推荐<br>2.h5新增方法：querySelector,querrySelectAll<br>3.利用节点操作元素: fu(parentNode),子(children),兄(previousElementSibling,nextElementSibling)</p>
+<h4 id="属性操作"><a href="#属性操作" class="headerlink" title="属性操作"></a>属性操作</h4><p>1.setAttribute:设置dom的属性值<br>2.getAttribute:得到dom的属性值<br>3.removeAttribute移除属性</p>
+<h4 id="鼠标事件"><a href="#鼠标事件" class="headerlink" title="鼠标事件"></a>鼠标事件</h4><p>onclick鼠标点击左键触发<br>onmouseover鼠标经过触发<br>onmouseout鼠标离开触发<br>onfocus鼠标获得焦点触发<br>onblur失去鼠标焦点触发<br>onmousemove鼠标移动触发<br>onmouseup鼠标弹起触发<br>onmousedown鼠标按下触发</p>
+<h3 id="事件高级"><a href="#事件高级" class="headerlink" title="事件高级"></a>事件高级</h3><h4 id="事件三要素"><a href="#事件三要素" class="headerlink" title="事件三要素"></a>事件三要素</h4><p>事件源,事件类型,事件处理程序</p>
+<h4 id="事件注册的两种方式："><a href="#事件注册的两种方式：" class="headerlink" title="事件注册的两种方式："></a>事件注册的两种方式：</h4><p>1.传统方式<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">btn[i].<span class="property">onclick</span> = <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="title function_">alert</span>(<span class="string">&quot;传统事件注册&quot;</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><br>2.事件侦听注册事件<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">btn[i].<span class="title function_">addEventListener</span>(<span class="string">&quot;click&quot;</span>,<span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="title function_">alert</span>(<span class="string">&quot;侦听事件&quot;</span>)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<h4 id="删除事件"><a href="#删除事件" class="headerlink" title="删除事件"></a>删除事件</h4><p>1.传统方式<br>eventTarget.onclick = null<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">divs[<span class="number">0</span>].<span class="property">onclick</span> = <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">               <span class="title function_">alert</span>(<span class="number">11</span>);</span><br><span class="line">               <span class="comment">// 1. 传统方式删除事件</span></span><br><span class="line">               divs[<span class="number">0</span>].<span class="property">onclick</span> = <span class="literal">null</span>;</span><br><span class="line">           &#125;</span><br></pre></td></tr></table></figure><br>2.方法监听注册方式<br>eventTarget.removeEvventListener(type,listerner[,useCapture])<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">divs[<span class="number">1</span>].<span class="title function_">addEventListener</span>(<span class="string">&#x27;click&#x27;</span>, fn) <span class="comment">// 里面的fn 不需要调用加小括号</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">function</span> <span class="title function_">fn</span>(<span class="params"></span>) &#123;</span><br><span class="line">            <span class="title function_">alert</span>(<span class="number">22</span>);</span><br><span class="line">            divs[<span class="number">1</span>].<span class="title function_">removeEventListener</span>(<span class="string">&#x27;click&#x27;</span>, fn);</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure></p>
+<h4 id="dom事件流"><a href="#dom事件流" class="headerlink" title="dom事件流"></a>dom事件流</h4><p>往下传播：捕获阶段doument,html ,body,div<br>往上传播:冒泡阶段div,body,html,document</p>
+<h4 id="事件对象event"><a href="#事件对象event" class="headerlink" title="事件对象event"></a>事件对象event</h4><p>事件的一系列相关数据的集合,鼠标,键盘<br>clientX鼠标距离浏览器窗口X的坐标<br>clientY鼠标距离浏览器窗口Y的坐标<br>target 绑定事件的元素<br>type 绑定的事件类型<br>pageX鼠标距离文档x坐标<br>pageY鼠标距离文档y坐标<br>screenX鼠标距离电脑屏幕x坐标<br>screenY鼠标距离电脑屏幕y坐标<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> div = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;div&#x27;</span>);</span><br><span class="line">       div.<span class="property">onclick</span> = <span class="keyword">function</span>(<span class="params">e</span>) &#123;</span><br><span class="line">               <span class="variable language_">console</span>.<span class="title function_">log</span>(e);</span><br><span class="line">           &#125;</span><br></pre></td></tr></table></figure></p>
+<h4 id="e-target和this的区别"><a href="#e-target和this的区别" class="headerlink" title="e.target和this的区别"></a>e.target和this的区别</h4><ol>
+<li>e.target 返回的是触发事件的对象（元素）  this 返回的是绑定事件的对象（元素）</li>
+</ol>
+<p>比如说ul和li如果绑定的是ul当点击li的时候,e.target返回的是li,而this返回的是ul</p>
+<h4 id="阻止默认行为"><a href="#阻止默认行为" class="headerlink" title="阻止默认行为"></a>阻止默认行为</h4><p>e.preventDefault()链接不跳转</p>
+<h4 id="阻止事件冒泡"><a href="#阻止事件冒泡" class="headerlink" title="阻止事件冒泡"></a>阻止事件冒泡</h4><p>e.stopPropagation()阻止事件冒泡</p>
+<h4 id="事件委托"><a href="#事件委托" class="headerlink" title="事件委托"></a>事件委托</h4><p>事件委托的核心原理：给父节点添加侦听器， 利用事件冒泡影响每一个子节点<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;ul&gt;</span><br><span class="line">       <span class="language-xml"><span class="tag">&lt;<span class="name">li</span>&gt;</span>知否知否，点我应有弹框在手！<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span></span><br><span class="line">       <span class="language-xml"><span class="tag">&lt;<span class="name">li</span>&gt;</span>知否知否，点我应有弹框在手！<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span></span><br><span class="line">       <span class="language-xml"><span class="tag">&lt;<span class="name">li</span>&gt;</span>知否知否，点我应有弹框在手！<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span></span><br><span class="line">       <span class="language-xml"><span class="tag">&lt;<span class="name">li</span>&gt;</span>知否知否，点我应有弹框在手！<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span></span><br><span class="line">       <span class="language-xml"><span class="tag">&lt;<span class="name">li</span>&gt;</span>知否知否，点我应有弹框在手！<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span></span><br><span class="line">   &lt;/ul&gt;</span><br><span class="line">   &lt;script&gt;</span><br><span class="line">       <span class="comment">// 事件委托的核心原理：给父节点添加侦听器， 利用事件冒泡影响每一个子节点</span></span><br><span class="line">       <span class="keyword">var</span> ul = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;ul&#x27;</span>);</span><br><span class="line">       ul.<span class="title function_">addEventListener</span>(<span class="string">&#x27;click&#x27;</span>, <span class="keyword">function</span>(<span class="params">e</span>) &#123;</span><br><span class="line">           <span class="comment">// alert(&#x27;知否知否，点我应有弹框在手！&#x27;);</span></span><br><span class="line">           <span class="comment">// e.target 这个可以得到我们点击的对象</span></span><br><span class="line">           e.<span class="property">target</span>.<span class="property">style</span>.<span class="property">backgroundColor</span> = <span class="string">&#x27;pink&#x27;</span>;</span><br><span class="line">       &#125;)</span><br></pre></td></tr></table></figure></p>
+<h4 id="禁止选中文字和右键菜单"><a href="#禁止选中文字和右键菜单" class="headerlink" title="禁止选中文字和右键菜单"></a>禁止选中文字和右键菜单</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 1. contextmenu 我们可以禁用右键菜单</span></span><br><span class="line">       <span class="variable language_">document</span>.<span class="title function_">addEventListener</span>(<span class="string">&#x27;contextmenu&#x27;</span>, <span class="keyword">function</span>(<span class="params">e</span>) &#123;</span><br><span class="line">               e.<span class="title function_">preventDefault</span>();</span><br><span class="line">           &#125;)</span><br><span class="line">           <span class="comment">// 2. 禁止选中文字 selectstart</span></span><br><span class="line">       <span class="variable language_">document</span>.<span class="title function_">addEventListener</span>(<span class="string">&#x27;selectstart&#x27;</span>, <span class="keyword">function</span>(<span class="params">e</span>) &#123;</span><br><span class="line">           e.<span class="title function_">preventDefault</span>();</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h4 id="常见的键盘事件"><a href="#常见的键盘事件" class="headerlink" title="常见的键盘事件"></a>常见的键盘事件</h4><p>onkeyup 按键被松开时候触发<br>onkeydown 按键被按下时候松开<br>onkeypress 按键被按下时候触发     不能识别功能键</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="http://example.com">zouwen</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://example.com/2022/03/24/JS%E4%B9%8BDOM%E7%AF%87/">http://example.com/2022/03/24/JS%E4%B9%8BDOM%E7%AF%87/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">zouwen</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/JS/">JS</a></div><div class="post_share"><div class="social-share" data-image="/img/35.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2022/03/26/JS%E4%B9%8BBOM%E7%AF%87/"><img class="prev-cover" src="/img/25.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">JS之BOM篇</div></div></a></div><div class="next-post pull-right"><a href="/2022/03/23/js%E8%AE%AD%E7%BB%83/"><img class="next-cover" src="/img/7.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">js训练</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2022/04/02/ES6%E9%AB%98%E7%BA%A7/" title="ES6高级"><img class="cover" src="/img/22.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-04-02</div><div class="title">ES6高级</div></div></a></div><div><a href="/2022/03/05/JS%E4%B8%AD%E7%9A%84%E5%8E%9F%E5%9E%8B%E5%92%8C%E5%8E%9F%E5%9E%8B%E9%93%BE/" title="JS中的原型和原型链"><img class="cover" src="/img/11.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-03-05</div><div class="title">JS中的原型和原型链</div></div></a></div><div><a href="/2022/03/26/JS%E4%B9%8BBOM%E7%AF%87/" title="JS之BOM篇"><img class="cover" src="/img/25.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-03-26</div><div class="title">JS之BOM篇</div></div></a></div><div><a href="/2022/03/23/JS%E5%9F%BA%E7%A1%80/" title="JS基础"><img class="cover" src="/img/12.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-03-23</div><div class="title">JS基础</div></div></a></div><div><a href="/2022/03/30/jquery/" title="jquery"><img class="cover" src="/img/3.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-03-30</div><div class="title">jquery</div></div></a></div><div><a href="/2022/03/23/js%E8%AE%AD%E7%BB%83/" title="js训练"><img class="cover" src="/img/7.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-03-23</div><div class="title">js训练</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%83%E7%B4%A0"><span class="toc-text">元素</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%8E%B7%E5%8F%96%E5%85%83%E7%B4%A0"><span class="toc-text">获取元素</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%93%8D%E4%BD%9C%E5%85%83%E7%B4%A0"><span class="toc-text">操作元素</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A1%A8%E5%8D%95%E5%85%83%E7%B4%A0%E7%9A%84%E5%B1%9E%E6%80%A7%E6%93%8D%E4%BD%9C"><span class="toc-text">表单元素的属性操作</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8E%92%E4%BB%96%E6%80%9D%E6%83%B3"><span class="toc-text">排他思想</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E5%B1%9E%E6%80%A7"><span class="toc-text">自定义属性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#H5%E8%87%AA%E5%AE%9A%E4%B9%89%E5%B1%9E%E6%80%A7"><span class="toc-text">H5自定义属性</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%8A%82%E7%82%B9%E6%93%8D%E4%BD%9C"><span class="toc-text">节点操作</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%88%B6%E5%AD%90%E7%BA%A7"><span class="toc-text">父子级</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AD%90%E8%8A%82%E7%82%B9"><span class="toc-text">子节点</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%85%84%E5%BC%9F%E8%8A%82%E7%82%B9"><span class="toc-text">兄弟节点</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E8%8A%82%E7%82%B9"><span class="toc-text">创建节点</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B7%BB%E5%8A%A0%E8%8A%82%E7%82%B9"><span class="toc-text">添加节点</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%A0%E9%99%A4%E8%8A%82%E7%82%B9"><span class="toc-text">删除节点</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A4%8D%E5%88%B6%E8%8A%82%E7%82%B9"><span class="toc-text">复制节点</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#DOM%E9%87%8D%E7%82%B9%E6%A0%B8%E5%BF%83"><span class="toc-text">DOM重点核心</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA"><span class="toc-text">创建</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%A0"><span class="toc-text">删</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%94%B9"><span class="toc-text">改</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9F%A5"><span class="toc-text">查</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B1%9E%E6%80%A7%E6%93%8D%E4%BD%9C"><span class="toc-text">属性操作</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%BC%A0%E6%A0%87%E4%BA%8B%E4%BB%B6"><span class="toc-text">鼠标事件</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8B%E4%BB%B6%E9%AB%98%E7%BA%A7"><span class="toc-text">事件高级</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BA%8B%E4%BB%B6%E4%B8%89%E8%A6%81%E7%B4%A0"><span class="toc-text">事件三要素</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BA%8B%E4%BB%B6%E6%B3%A8%E5%86%8C%E7%9A%84%E4%B8%A4%E7%A7%8D%E6%96%B9%E5%BC%8F%EF%BC%9A"><span class="toc-text">事件注册的两种方式：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%A0%E9%99%A4%E4%BA%8B%E4%BB%B6"><span class="toc-text">删除事件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#dom%E4%BA%8B%E4%BB%B6%E6%B5%81"><span class="toc-text">dom事件流</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BA%8B%E4%BB%B6%E5%AF%B9%E8%B1%A1event"><span class="toc-text">事件对象event</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#e-target%E5%92%8Cthis%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-text">e.target和this的区别</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%98%BB%E6%AD%A2%E9%BB%98%E8%AE%A4%E8%A1%8C%E4%B8%BA"><span class="toc-text">阻止默认行为</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%98%BB%E6%AD%A2%E4%BA%8B%E4%BB%B6%E5%86%92%E6%B3%A1"><span class="toc-text">阻止事件冒泡</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BA%8B%E4%BB%B6%E5%A7%94%E6%89%98"><span class="toc-text">事件委托</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%A6%81%E6%AD%A2%E9%80%89%E4%B8%AD%E6%96%87%E5%AD%97%E5%92%8C%E5%8F%B3%E9%94%AE%E8%8F%9C%E5%8D%95"><span class="toc-text">禁止选中文字和右键菜单</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81%E7%9A%84%E9%94%AE%E7%9B%98%E4%BA%8B%E4%BB%B6"><span class="toc-text">常见的键盘事件</span></a></li></ol></li></ol></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By zouwen</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',preloader.endLoading())</script><div class="js-pjax"></div><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script id="click-heart" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/click-heart.min.js" async="async" mobile="false"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/metingjs/dist/Meting.min.js"></script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>let pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+
+  // removeEventListener scroll 
+  window.tocScrollFn && window.removeEventListener('scroll', window.tocScrollFn)
+  window.scrollCollect && window.removeEventListener('scroll', scrollCollect)
+
+  typeof preloader === 'object' && preloader.initLoading()
+  document.getElementById('rightside').style.cssText = "opacity: ''; transform: ''"
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+  typeof disqusjs === 'object' && disqusjs.destroy()
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof chatBtnFn === 'function' && chatBtnFn()
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+
+  typeof preloader === 'object' && preloader.endLoading()
+})
+
+document.addEventListener('pjax:error', (e) => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><!-- hexo injector body_end start --><script async src="//at.alicdn.com/t/font_2032782_8d5kxvn09md.js"></script><!-- hexo injector body_end end --></body></html>

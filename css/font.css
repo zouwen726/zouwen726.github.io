@@ -1,0 +1,78 @@
+@font-face {
+    font-family: "iconfont"; /* Project id  */
+    src: url('iconfont.ttf?t=1658653695064') format('truetype');
+  }
+  
+  .iconfont {
+    font-family: "iconfont" !important;
+    font-size: 16px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  .icon-liebiaodaohang_yule:before {
+    content: "\e63d";
+  }
+  
+  .icon-yule:before {
+    content: "\e6d8";
+  }
+  
+  .icon-fenlei:before {
+    content: "\e670";
+  }
+  
+  .icon-fenlei1:before {
+    content: "\e687";
+  }
+  
+  .icon-xiaoyuandaohang:before {
+    content: "\e633";
+  }
+  
+  .icon-fenlei2:before {
+    content: "\e638";
+  }
+  
+  .icon-shouye:before {
+    content: "\e631";
+  }
+  
+  .icon-pengyouquan:before {
+    content: "\e667";
+  }
+  
+  .icon-shouye1:before {
+    content: "\e6c7";
+  }
+  
+  .icon-zhuye:before {
+    content: "\e60c";
+  }
+  
+  .icon-zhuye1:before {
+    content: "\e606";
+  }
+  
+  .icon-pengyouquan1:before {
+    content: "\e634";
+  }
+  
+  .icon-liebiaoqingdan:before {
+    content: "\e63a";
+  }
+  
+  .icon-qingdan:before {
+    content: "\fb25";
+  }
+  
+  .icon-yulejian:before {
+    content: "\e637";
+  }
+  
+  .icon-daohang:before {
+    content: "\fddb";
+  }
+  
+  

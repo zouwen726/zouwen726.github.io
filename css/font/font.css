@@ -1,0 +1,165 @@
+@font-face {
+  font-family: "iconfont"; /* Project id 3543447 */
+  /* Color fonts */
+  src: 
+       url('iconfont.woff2?t=1658659518140') format('woff2'),
+       url('iconfont.woff?t=1658659518140') format('woff'),
+       url('iconfont.ttf?t=1658659518140') format('truetype');
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 22px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-biaoqian:before {
+  content: "\e63f";
+}
+
+.icon-icon-test:before {
+  content: "\e615";
+}
+
+.icon-tubiaozhizuomobanyihuifu-:before {
+  content: "\e6a1";
+}
+
+.icon-kafei:before {
+  content: "\e659";
+}
+
+.icon-dianying:before {
+  content: "\e67f";
+}
+
+.icon-xiuxi:before {
+  content: "\e618";
+}
+
+.icon-shuben:before {
+  content: "\e623";
+}
+
+.icon-qqyinle:before {
+  content: "\e635";
+}
+
+.icon-xiangce:before {
+  content: "\e60f";
+}
+
+.icon-yule2:before {
+  content: "\e603";
+}
+
+.icon-kafei1:before {
+  content: "\e626";
+}
+
+.icon-shizhong:before {
+  content: "\e62e";
+}
+
+.icon-shipin:before {
+  content: "\e609";
+}
+
+.icon-xiangce1:before {
+  content: "\e60a";
+}
+
+.icon-shijue:before {
+  content: "\e7f5";
+}
+
+.icon-book:before {
+  content: "\e6e8";
+}
+
+.icon-1_dianying-51:before {
+  content: "\f570";
+}
+
+.icon-daochu1024-10:before {
+  content: "\e617";
+}
+
+.icon-mianxingxiuxi:before {
+  content: "\e6b1";
+}
+
+.icon-qiyexiangce:before {
+  content: "\fa1e";
+}
+
+.icon-qiyexiangce1:before {
+  content: "\fbcf";
+}
+
+.icon-yinle:before {
+  content: "\fe56";
+}
+
+.icon-shuji:before {
+  content: "\e6b5";
+}
+
+.icon-fenlei3:before {
+  content: "\e651";
+}
+
+.icon-fenlei4:before {
+  content: "\100da";
+}
+
+.icon-liebiaodaohang_yule:before {
+  content: "\e63d";
+}
+
+.icon-yule:before {
+  content: "\e6d8";
+}
+
+.icon-fenlei:before {
+  content: "\e670";
+}
+
+.icon-xiaoyuandaohang:before {
+  content: "\e633";
+}
+
+.icon-fenlei2:before {
+  content: "\e638";
+}
+
+.icon-pengyouquan:before {
+  content: "\e667";
+}
+
+.icon-zhuye:before {
+  content: "\e60c";
+}
+
+.icon-zhuye1:before {
+  content: "\e606";
+}
+
+.icon-liebiaoqingdan:before {
+  content: "\e63a";
+}
+
+.icon-qingdan:before {
+  content: "\fb25";
+}
+
+.icon-yulejian:before {
+  content: "\e637";
+}
+
+.icon-daohang:before {
+  content: "\fddb";
+}
+
