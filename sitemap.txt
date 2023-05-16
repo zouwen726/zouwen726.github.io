@@ -71,7 +71,6 @@ http://example.com/2022/03/05/JS%E4%B8%AD%E7%9A%84%E5%8E%9F%E5%9E%8B%E5%92%8C%E5
 http://example.com/2022/03/26/JS%E4%B9%8BBOM%E7%AF%87/
 http://example.com/2022/03/24/JS%E4%B9%8BDOM%E7%AF%87/
 http://example.com/2022/03/23/JS%E5%9F%BA%E7%A1%80/
-http://example.com/2022/07/26/JavaScript%E9%9D%A2%E8%AF%95%E9%A2%98/
 http://example.com/2022/06/14/Java%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/
 http://example.com/2022/06/14/MYSQL%E5%9F%BA%E7%A1%80%E6%93%8D%E4%BD%9C/
 http://example.com/2022/06/17/Maven%E6%93%8D%E4%BD%9C/
